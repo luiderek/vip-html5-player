@@ -7,6 +7,32 @@ var MAX_HISTORY = 10;
 var scrubp = 0;
 var is_dragging_scrubber = false;
 
+let $btnloopicon = document.querySelector("#btn-loop i");
+let $btnloop = document.querySelector("#btn-loop");
+let $btnnext = document.querySelector("#btn-next");
+let $btnnexticon = document.querySelector("#btn-play i");
+let $btnplay = document.querySelector("#btn-play");
+let $btnprev = document.querySelector("#btn-previous");
+let $btnvolicon = document.querySelector("#btn-volume i");
+let $btnvol = document.querySelector("#btn-volume");
+let $scrubprog = document.querySelector("#scrubber-progress");
+let $scrubtrack = document.querySelector("#scrubber-track");
+let $selectlist = document.querySelector("#select-playlist");
+let $timebar = document.querySelector("#time-bar");
+let $timecur = document.querySelector("#time-current");
+let $timerem = document.querySelector("#time-remaining");
+let $trackrelect = document.querySelector("#tracks-table .relected");
+let $trackdiv = document.querySelector("#tracks-table div");
+let $volslide = document.querySelector("#volume-slider");
+// document.querySelector("<div>")
+// document.querySelector("<option>")
+// document.querySelector("audio")
+// document.querySelector("html, body")
+// document.querySelector(document)
+// document.querySelector(playlistXML)
+// document.querySelector(this)
+
+
 var PLAYLISTS = {
   VIP: "http://vip.aersia.net/roster.xml",
   Mellow: "http://vip.aersia.net/roster-mellow.xml",
@@ -16,7 +42,7 @@ var PLAYLISTS = {
   CPP: "http://cpp.aersia.net/roster.xml",
 };
 
-var DEFAULT_PLAYLIST = "VIP";
+var DEFAULT_PLAYLIST = "Mellow";
 
 function formatTimecode(seconds) {
   seconds = Math.floor(seconds);
@@ -33,7 +59,7 @@ function formatTimecode(seconds) {
 
 // Creates an id for a track used in the location hash
 function createTrackId(track) {
-  var playlist = $("#select-playlist").val();
+  var playlist = $selectlist.value;
   var track = track.creator + " - " + track.title;
   track = track.replace(/[^a-zA-Z0-9-]/g, "_");
 
@@ -199,9 +225,9 @@ function populatePlaylistOptions() {
   }
 }
 
-$(function () {
-  // Register Events
-  $("audio").on("pause", function () {
+document.addEventListener('onload', function(){
+// Register Events
+$("audio").on("pause", function () {
     $("#btn-play i").removeClass("fa-pause");
     $("#btn-play i").addClass("fa-play");
   });
@@ -240,7 +266,7 @@ $(function () {
         scrubp = p;
       });
     }
-  });
+})
 
   $(document).on("mouseup.scrubber-track", function (e) {
     if (is_dragging_scrubber) {
