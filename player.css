@@ -1,0 +1,16 @@
+.track {
+  color: rgb(255, 174, 0);
+}
+
+.track:nth-child(odd) {
+  background-color: rgb(29, 20, 203);
+}
+
+.track:nth-child(even) {
+  background-color: rgb(50, 43, 200);
+}
+
+.track:hover {
+  background-color: aqua;
+  color: white;
+}
