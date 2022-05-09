@@ -1,5 +1,7 @@
 .track {
   color: rgb(255, 174, 0);
+  padding-left: .3rem;
+  line-height: 125%;
 }
 
 .track:nth-child(odd) {
