@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>scuffed vidya interweb playlist</title>
   <link rel="stylesheet" href="player.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
+  <div class="controls">
+    <i icon-name="play"></i>
+    <i icon-name="pause" class="hidden"></i>
+    <i icon-name="skip-back"></i>
+    <i icon-name="skip-forward"></i>
+    <i icon-name="volume-1"></i>
+  </div>
   <div class="track-list"></div>
   <audio id="audio"></audio>
+
+  <script>
+    lucide.createIcons();
+  </script>
   <script src="player.js"></script>
 </body>
+
 </html>

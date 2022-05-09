@@ -3,7 +3,7 @@ let parser = new DOMParser();
 let xhr = new XMLHttpRequest();
 let trackObject;
 
-xhr.open('GET', 'http://vip.aersia.net/roster-mellow.xml');
+xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
 xhr.onreadystatechange = function () {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     let status = xhr.status;
@@ -46,14 +46,57 @@ function appendTrackToList(track){
   $trackList.appendChild($div);
 }
 
-let $audio = document.querySelector('#audio')
+let $audio = document.querySelector('#audio');
 
 $trackList.addEventListener('click', function (event) {
   // The check is in case people click and drag the list, for some reason.
   if (event.target.className !== 'track-list') {
+    changeSelectedTrack(event.target);
     let selected_id = event.target.classList[1].split('-')[1];
     console.log(trackObject[selected_id-1]);
     $audio.setAttribute('src', trackObject[selected_id - 1].link);
-    $audio.play();
+    play();
   }
 });
+
+let $controls = document.querySelector('.controls');
+let $btnPlay = document.querySelector('.lucide-play');
+let $btnPause = document.querySelector('.lucide-pause');
+
+$controls.addEventListener('click', function (event) {
+  if (event.target.className !== 'controls') {
+    let target = event.target.closest('svg');
+    let type = target.classList[1].split('-').slice(1).join('-');
+    console.log('target', target);
+    console.log('type', type);
+    switch (type) {
+      case 'pause':
+        pause();
+        break;
+      case 'play':
+        play();
+        break;
+    }
+  }
+});
+
+function pause() {
+  $audio.pause();
+  $btnPlay.classList.remove('hidden');
+  $btnPause.classList.add('hidden');
+}
+
+function play() {
+  $audio.play();
+  $btnPlay.classList.add('hidden');
+  $btnPause.classList.remove('hidden');
+}
+
+function changeSelectedTrack(target) {
+  $prev_selected = document.querySelector('.selected-track')
+  if ($prev_selected) {
+    console.log($prev_selected);
+    $prev_selected.classList.remove('selected-track');
+  }
+  target.classList.add('selected-track');
+}

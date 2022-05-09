@@ -1,5 +1,21 @@
 body {
   margin: 0;
+  font-family: monospace;
+}
+
+.controls {
+  background-color: #202065;
+  color: #ffffff;
+  user-select: none;
+}
+
+.controls > svg {
+  transform: scale(.75);
+  margin-bottom: -0.2rem;
+}
+
+polygon {
+  user-select: none;
 }
 
 .track {
@@ -7,7 +23,9 @@ body {
   padding-left: .3rem;
   line-height: 125%;
   user-select: none;
+  border: #181292 solid 1px;
 }
+
 
 .track:nth-child(odd) {
   background-color: rgb(29, 20, 203);
@@ -17,7 +35,16 @@ body {
   background-color: rgb(50, 43, 200);
 }
 
+.track-list > .selected-track {
+  color: rgb(39, 28, 236);
+  background-color: rgb(255, 187, 40);
+}
+
 .track:hover {
-  background-color: aqua;
-  color: white;
+  background-color: rgb(95, 222, 222);
+  color: black;
+}
+
+.hidden {
+  display: none;
 }
