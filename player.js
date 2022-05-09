@@ -12,7 +12,7 @@ xhr.onreadystatechange = function () {
       xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
       let tracklist = xmlParsed.children[0].children[0].children;
       trackObject = tracklistObject(tracklist);
-      for(let track of trackObject){
+      for (let track of trackObject) {
         appendTrackToList(track);
       }
     } else {
@@ -38,22 +38,30 @@ function tracklistObject(trackHTMLCollection) {
   return result;
 }
 
-function appendTrackToList(track){
+function appendTrackToList(track) {
   let $div = document.createElement('div');
   $div.className = `track t-${track.id}`;
-  $div.textContent = track.name;
+  if (track.name.includes(' - ')) {
+    $div.textContent = track.name.split(' - ').slice(1).join('-')
+  } else {
+    $div.textContent = track.name;
+  }
+
+  //;
   // [0] author [1] trackname [2] resource link
   $trackList.appendChild($div);
 }
 
 let $audio = document.querySelector('#audio');
 
+let $nowPlaying = document.querySelector('.now-playing');
+
 $trackList.addEventListener('click', function (event) {
   // The check is in case people click and drag the list, for some reason.
   if (event.target.className !== 'track-list') {
     changeSelectedTrack(event.target);
     let selected_id = event.target.classList[1].split('-')[1];
-    console.log(trackObject[selected_id-1]);
+    console.log(trackObject[selected_id - 1]);
     $audio.setAttribute('src', trackObject[selected_id - 1].link);
     play();
   }
@@ -99,4 +107,6 @@ function changeSelectedTrack(target) {
     $prev_selected.classList.remove('selected-track');
   }
   target.classList.add('selected-track');
+  let selected_id = event.target.classList[1].split('-')[1];
+  $nowPlaying.textContent = `${trackObject[selected_id - 1].author} - ${trackObject[selected_id - 1].name}`;
 }

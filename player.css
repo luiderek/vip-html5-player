@@ -3,13 +3,24 @@ body {
   font-family: monospace;
 }
 
+.now-playing {
+  position: fixed;
+  width: 100%;
+  background-color: #2820c6;
+  color: rgb(255, 174, 0);
+  text-align: center;
+}
+
 .controls {
+  position: fixed;
+  width: 100%;
   background-color: #202065;
   color: #ffffff;
   user-select: none;
+  margin-top: 0.95rem;
 }
 
-.controls > svg {
+.controls>svg {
   transform: scale(.75);
   margin-bottom: -0.2rem;
 }
@@ -18,24 +29,27 @@ polygon {
   user-select: none;
 }
 
+.track-list {
+  padding-top: 2.4rem;
+}
+
 .track {
   color: rgb(255, 174, 0);
   padding-left: .3rem;
   line-height: 125%;
   user-select: none;
-  border: #181292 solid 1px;
+  border: #2820c6 solid 1px;
 }
 
-
 .track:nth-child(odd) {
-  background-color: rgb(29, 20, 203);
+  background-color: rgb(32, 23, 197);
 }
 
 .track:nth-child(even) {
-  background-color: rgb(50, 43, 200);
+  background-color: rgb(54, 46, 205);
 }
 
-.track-list > .selected-track {
+.track-list>.selected-track {
   color: rgb(39, 28, 236);
   background-color: rgb(255, 187, 40);
 }
