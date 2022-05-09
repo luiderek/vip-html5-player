@@ -1,7 +1,12 @@
+body {
+  margin: 0;
+}
+
 .track {
   color: rgb(255, 174, 0);
   padding-left: .3rem;
   line-height: 125%;
+  user-select: none;
 }
 
 .track:nth-child(odd) {

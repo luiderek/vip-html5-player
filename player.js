@@ -1,8 +1,6 @@
 let parser = new DOMParser();
 
 let xhr = new XMLHttpRequest();
-// let xmlArr;
-// let extrack;
 let trackObject;
 
 xhr.open('GET', '/mellow.xml');
@@ -12,10 +10,8 @@ xhr.onreadystatechange = function () {
     if (status === 0 || (status >= 200 && status < 400)) {
       xmlMellow = xhr.responseText;
       xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
-
       let tracklist = xmlParsed.children[0].children[0].children;
       trackObject = tracklistObject(tracklist);
-
       for(let track of trackObject){
         appendTrackToList(track);
       }
@@ -50,7 +46,14 @@ function appendTrackToList(track){
   $trackList.appendChild($div);
 }
 
+let $audio = document.querySelector('#audio')
+
 $trackList.addEventListener('click', function (event) {
-  let selected_id = event.target.classList[1].split('-')[1];
-  console.log(trackObject[selected_id-1]);
+  // The check is in case people click and drag the list, for some reason.
+  if (event.target.className !== 'track-list') {
+    let selected_id = event.target.classList[1].split('-')[1];
+    console.log(trackObject[selected_id-1]);
+    $audio.setAttribute('src', trackObject[selected_id - 1].link);
+    $audio.play();
+  }
 });
