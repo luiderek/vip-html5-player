@@ -3,7 +3,7 @@ let parser = new DOMParser();
 let xhr = new XMLHttpRequest();
 let trackObject;
 
-xhr.open('GET', '/mellow.xml');
+xhr.open('GET', 'http://vip.aersia.net/roster-mellow.xml');
 xhr.onreadystatechange = function () {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     let status = xhr.status;
