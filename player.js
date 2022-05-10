@@ -53,7 +53,8 @@ function appendTrackToList(track) {
 }
 
 let $audio = document.querySelector('#audio');
-$audio.volume = .5;
+let volume = .5;
+$audio.volume = volume;
 
 let $nowPlaying = document.querySelector('.now-playing');
 
@@ -62,7 +63,6 @@ $trackList.addEventListener('click', function (event) {
   if (event.target.className !== 'track-list') {
     changeSelectedTrack(event.target);
     let selected_id = event.target.classList[1].split('-')[1];
-    console.log(trackObject[selected_id - 1]);
     $audio.setAttribute('src', trackObject[selected_id - 1].link);
     play();
   }
@@ -77,18 +77,13 @@ $controls.addEventListener('click', function (event) {
   if (targetclass !== 'controls' && targetclass !== 'volume-slider') {
     let target = event.target.closest('svg');
     let type = target.classList[1].split('-').slice(1).join('-');
-    console.log('target', target);
-    console.log('type', type);
     switch (type) {
       case 'pause':
-        pause();
-        break;
+        pause(); break;
       case 'play':
-        play();
-        break;
-      case 'volume-1':
-        mute();
-        break;
+        play(); break;
+      case 'volume-1': case 'volume-x':
+        toggleMute(); break;
     }
   }
 });
@@ -105,14 +100,21 @@ function play() {
   $btnPause.classList.remove('hidden');
 }
 
-function mute() {
-
+const $volumeUnMuted = document.querySelector('.lucide-volume-1');
+const $volumeMuted = document.querySelector('.lucide-volume-x');
+function toggleMute() {
+  if ($volumeMuted.classList.contains('hidden')) {
+    $audio.volume = 0;
+  } else {
+    $audio.volume = volume;
+  }
+  $volumeMuted.classList.toggle('hidden');
+  $volumeUnMuted.classList.toggle('hidden');
 }
 
 function changeSelectedTrack(target) {
   $prev_selected = document.querySelector('.selected-track')
   if ($prev_selected) {
-    console.log($prev_selected);
     $prev_selected.classList.remove('selected-track');
   }
   target.classList.add('selected-track');
@@ -122,5 +124,8 @@ function changeSelectedTrack(target) {
 
 const $volumeSlider = document.querySelector('.volume-slider');
 $volumeSlider.addEventListener('change', function (event) {
-  $audio.volume = event.target.value/100;
+  volume = event.target.value / 100
+  if ($volumeMuted.classList.contains('hidden')) {
+    $audio.volume = volume;
+  }
 });
