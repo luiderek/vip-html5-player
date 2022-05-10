@@ -16,7 +16,7 @@ body {
   position: fixed;
   width: 100%;
   background-color: #13136d;
-  color: #ffffff;
+  color: rgb(255, 174, 0);
   user-select: none;
   margin-top: 1.13rem;
   display: flex;
@@ -72,6 +72,44 @@ polygon {
 .track:hover {
   background-color: rgb(115, 138, 241);
   color: rgb(0, 3, 160);
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ff9148;
+  padding: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 8pt;
+  text-align: center;
+}
+
+.credits a {
+  color: #a96030;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 8pt;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7f6157;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff9148;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(78, 145, 255);
 }
 
 .hidden {
