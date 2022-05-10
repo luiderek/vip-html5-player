@@ -138,7 +138,7 @@ document.addEventListener("keyup", function (event) {
         }
         break;
       case "ArrowRight":
-        $audio.currentTime += 20;
+        $audio.currentTime += Math.max($audio.duration / 8, 15);
         break;
     }
   }
