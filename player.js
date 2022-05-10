@@ -2,7 +2,7 @@ let parser = new DOMParser();
 
 let xhr = new XMLHttpRequest();
 let trackObject;
-let currentTrackIndex = 1;
+let currentTrackIndex = null;
 
 xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
 xhr.onreadystatechange = function () {
@@ -89,6 +89,8 @@ $controls.addEventListener('click', function (event) {
         toggleMute(); break;
       case 'skip-forward':
         playNextTrack(); break;
+      case 'skip-back':
+        playPreviousTrack(); break;
     }
   }
 });
@@ -100,7 +102,13 @@ function pause() {
 }
 
 function play() {
-  $audio.play();
+  if (currentTrackIndex === null) {
+    currentTrackIndex = -1;
+    playNextTrack();
+  }
+  else {
+    $audio.play();
+  }
   $btnPlay.classList.add('hidden');
   $btnPause.classList.remove('hidden');
 }
@@ -144,11 +152,28 @@ $audio.onended = () => {
 }
 
 function playNextTrack() {
+  if (currentTrackIndex === null) {
+    currentTrackIndex = -1;
+  }
   currentTrackIndex++;
-  $audio.setAttribute('src', trackObject[currentTrackIndex].link);
-  play();
   let $newTrack = document.querySelector(`.t-${currentTrackIndex+1}`);
   changeSelectedTrack($newTrack);
+  $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+  play();
+}
+
+function playPreviousTrack() {
+  if (currentTrackIndex !== null) {
+    if ($audio.currentTime > 3) {
+      $audio.currentTime = 0;
+    } else {
+      currentTrackIndex--;
+      let $newTrack = document.querySelector(`.t-${currentTrackIndex + 1}`);
+      changeSelectedTrack($newTrack);
+      $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+      play();
+    }
+  }
 }
 
 function formatTime(seconds) {
