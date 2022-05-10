@@ -1,43 +1,49 @@
 let parser = new DOMParser();
 
 let xhr = new XMLHttpRequest();
-let trackObject;
+let trackObject = tracklist.tracks;
 let currentTrackIndex = null;
-
-xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    let status = xhr.status;
-    if (status === 0 || (status >= 200 && status < 400)) {
-      xmlMellow = xhr.responseText;
-      xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
-      let tracklist = xmlParsed.children[0].children[0].children;
-      trackObject = tracklistObject(tracklist);
-      for (let track of trackObject) {
-        appendTrackToList(track);
-      }
-    } else {
-      console.error('There was a mistake with XHR of the track list');
-    }
-  }
-}
-xhr.send();
-
 const $trackList = document.querySelector('.track-list');
 
-function tracklistObject(trackHTMLCollection) {
-  let result = [];
-  let next_id = 0;
-  for (let track of trackHTMLCollection) {
-    result.push({
-      author: track.children[0].textContent,
-      name: track.children[1].textContent,
-      link: track.children[2].textContent,
-      id: ++next_id
-    })
+window.addEventListener('load', function (e) {
+  // Giving all the tracks ID numbers, which the player needs.
+  for (let i = 0; i < trackObject.length; i++) {
+    trackObject[i].id = i + 1;
   }
-  return result;
-}
+
+  for (let track of trackObject) {
+    appendTrackToList(track);
+  }
+});
+
+// xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
+// xhr.onreadystatechange = function () {
+//   if (xhr.readyState === XMLHttpRequest.DONE) {
+//     let status = xhr.status;
+//     if (status === 0 || (status >= 200 && status < 400)) {
+//       xmlMellow = xhr.responseText;
+//       xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
+//       let tracklist = xmlParsed.children[0].children[0].children;
+//       trackObject = tracklistObject(tracklist);
+//     } else {
+//       console.error('There was a mistake with XHR of the track list');
+//     }
+//   }
+// }
+// xhr.send();
+
+// function tracklistObject(trackHTMLCollection) {
+//   let result = [];
+//   let next_id = 0;
+//   for (let track of trackHTMLCollection) {
+//     result.push({
+//       author: track.children[0].textContent,
+//       name: track.children[1].textContent,
+//       link: track.children[2].textContent
+//     })
+//   }
+//   return result;
+// }
 // These two + JSON.stringify(trackobject, null, 0) gave me the contents of mellow.json.
 
 function appendTrackToList(track) {
@@ -48,8 +54,6 @@ function appendTrackToList(track) {
   } else {
     $div.textContent = track.name;
   }
-
-  //;
   // [0] author [1] trackname [2] resource link
   $trackList.appendChild($div);
 }
@@ -64,7 +68,7 @@ $trackList.addEventListener('click', function (event) {
   // The check is in case people click and drag the list, for some reason.
   if (event.target.className !== 'track-list') {
     let selected_id = event.target.classList[1].split('-')[1];
-    currentTrackIndex = selected_id-1;
+    currentTrackIndex = selected_id - 1;
     changeSelectedTrack(event.target);
     $audio.setAttribute('src', trackObject[currentTrackIndex].link);
     play();
@@ -83,16 +87,43 @@ $controls.addEventListener('click', function (event) {
     let type = target.classList[1].split('-').slice(1).join('-');
     switch (type) {
       case 'pause':
-        pause(); break;
+        pause();
+        break;
       case 'play':
-        play(); break;
+        play();
+        break;
       case 'volume-1': case 'volume-x':
-        toggleMute(); break;
+        toggleMute();
+        break;
       case 'skip-forward':
-        playNextTrack(); break;
+        playNextTrack();
+        break;
       case 'skip-back':
-        playPreviousTrack(); break;
+        playPreviousTrack();
+        break;
     }
+  }
+});
+
+document.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+  switch (key) { // change to event.key to key to use the above variable
+    case "ArrowLeft":
+      $audio.currentTime -= 10;
+      if ($audio.currentTime <= 0){
+        playPreviousTrack();
+      }
+      break;
+    case "ArrowRight":
+      $audio.currentTime += 20;
+      break;
+    case "ArrowUp":
+      $audio.volume += .05;
+      break;
+    case "ArrowDown":
+      $audio.volume -= .05;
+      break;
   }
 });
 
@@ -157,8 +188,8 @@ function playNextTrack() {
     currentTrackIndex = -1;
   }
   currentTrackIndex++;
-  let $newTrack = document.querySelector(`.t-${currentTrackIndex+1}`);
-  if ($newTrack){
+  let $newTrack = document.querySelector(`.t-${currentTrackIndex + 1}`);
+  if ($newTrack) {
     changeSelectedTrack($newTrack);
     $audio.setAttribute('src', trackObject[currentTrackIndex].link);
     play();
