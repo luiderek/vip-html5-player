@@ -53,6 +53,7 @@ function appendTrackToList(track) {
 }
 
 let $audio = document.querySelector('#audio');
+$audio.volume = .5;
 
 let $nowPlaying = document.querySelector('.now-playing');
 
@@ -72,7 +73,8 @@ let $btnPlay = document.querySelector('.lucide-play');
 let $btnPause = document.querySelector('.lucide-pause');
 
 $controls.addEventListener('click', function (event) {
-  if (event.target.className !== 'controls') {
+  let targetclass = event.target.className;
+  if (targetclass !== 'controls' && targetclass !== 'volume-slider') {
     let target = event.target.closest('svg');
     let type = target.classList[1].split('-').slice(1).join('-');
     console.log('target', target);
@@ -83,6 +85,9 @@ $controls.addEventListener('click', function (event) {
         break;
       case 'play':
         play();
+        break;
+      case 'volume-1':
+        mute();
         break;
     }
   }
@@ -100,6 +105,10 @@ function play() {
   $btnPause.classList.remove('hidden');
 }
 
+function mute() {
+
+}
+
 function changeSelectedTrack(target) {
   $prev_selected = document.querySelector('.selected-track')
   if ($prev_selected) {
@@ -110,3 +119,8 @@ function changeSelectedTrack(target) {
   let selected_id = event.target.classList[1].split('-')[1];
   $nowPlaying.textContent = `${trackObject[selected_id - 1].author} - ${trackObject[selected_id - 1].name}`;
 }
+
+const $volumeSlider = document.querySelector('.volume-slider');
+$volumeSlider.addEventListener('change', function (event) {
+  $audio.volume = event.target.value/100;
+});

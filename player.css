@@ -29,6 +29,12 @@ polygon {
   user-select: none;
 }
 
+.volume-slider {
+  width: 20%;
+  transform: scale(.7);
+  margin-left: -1.7rem;
+}
+
 .track-list {
   padding-top: 2.4rem;
 }
@@ -50,13 +56,13 @@ polygon {
 }
 
 .track-list>.selected-track {
-  color: rgb(39, 28, 236);
-  background-color: rgb(255, 187, 40);
+  color: rgb(18, 14, 97);
+  background-color: rgb(241, 142, 29);
 }
 
 .track:hover {
-  background-color: rgb(95, 222, 222);
-  color: black;
+  background-color: rgb(115, 138, 241);
+  color: rgb(0, 3, 160);
 }
 
 .hidden {
