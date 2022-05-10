@@ -6,26 +6,6 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-admiral.m4a",
     },
     {
-      "author": "Alcarys Complex",
-      "name": "A Dream of Wilder Places",
-      "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-dreamofwilderplaces.m4a",
-    },
-    {
-      "author": "Alcarys Complex",
-      "name": "Edelweiss",
-      "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-edelweiss.m4a",
-    },
-    {
-      "author": "Alcarys Complex",
-      "name": "Fair Winds",
-      "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-fairwinds.m4a",
-    },
-    {
-      "author": "Animal Crossing",
-      "name": "Ben Briggs & ectogemia - Rainy Day",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossing-benbriggs-rainyday.m4a",
-    },
-    {
       "author": "Animal Crossing",
       "name": "drpez12 - K.K. Bossa",
       "link": "https://www.vipvgm.net/mu/mellow/animalcrossing-drpez12-kkbossa.m4a",
@@ -46,56 +26,6 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/animalcrossingnl-aivitran-mainstreet.m4a",
     },
     {
-      "author": "Animal Crossing: New Leaf",
-      "name": "Laura Shigihara - Old Cafe",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossingnl-laurashigihara-oldcafe.m4a",
-    },
-    {
-      "author": "Animal Crossing: Wild World",
-      "name": "Kotaro Nakagawa - The Coffee Shop (Pigeon's Den)",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossingww-kotaronakagawa-coffeeshop.m4a",
-    },
-    {
-      "author": "Animal Crossing: Wild World",
-      "name": "Kotaro Nakagawa - Main Theme",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossingww-kotaronakagawa-maintheme.m4a",
-    },
-    {
-      "author": "Anno 2070",
-      "name": "Power Nap",
-      "link": "https://www.vipvgm.net/mu/mellow/anno2070-powernap.m4a",
-    },
-    {
-      "author": "Anno 2070",
-      "name": "We Will Carry You",
-      "link": "https://www.vipvgm.net/mu/mellow/anno2070-wewillcarryyou.m4a",
-    },
-    {
-      "author": "Anno 2070",
-      "name": "God Smiles (Italian Vocals)",
-      "link": "https://www.vipvgm.net/mu/anno2070-godsmiles.m4a",
-    },
-    {
-      "author": "Aquaria",
-      "name": "Remains",
-      "link": "https://www.vipvgm.net/mu/aquaria-remains.m4a",
-    },
-    {
-      "author": "Arcanum: Of Steamworks and Magick Obscura",
-      "name": "Arcanum",
-      "link": "https://www.vipvgm.net/mu/mellow/arcanum-arcanum.m4a",
-    },
-    {
-      "author": "Attack of the Friday Monsters! A Tokyo Tale",
-      "name": "I Want to Put Out Bad to Dream of Father",
-      "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-iwanttoputoutbadtodreamoffather.m4a",
-    },
-    {
-      "author": "Attack of the Friday Monsters! A Tokyo Tale",
-      "name": "Attack of the Friday Monsters! A Tokyo Tale - It's a Walk But I Run",
-      "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-itsawalkbutirun.m4a",
-    },
-    {
       "author": "Attack of the Friday Monsters! A Tokyo Tale",
       "name": "Toll of Small Happiness",
       "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-tollofsmallhappiness.m4a",
@@ -104,21 +34,6 @@ const tracklist = {
       "author": "Attack of the Friday Monsters! A Tokyo Tale",
       "name": "Vision of Loveliness Sixth in the Class!",
       "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-visionoflovelinesssixthintheclass.m4a",
-    },
-    {
-      "author": "Bastion",
-      "name": "Build That Wall (Zia's Theme)",
-      "link": "https://www.vipvgm.net/mu/mellow/bastion-buildthatwall.m4a",
-    },
-    {
-      "author": "Bastion",
-      "name": "Mother, I'm Here (Zulf's Theme)",
-      "link": "https://www.vipvgm.net/mu/mellow/bastion-motherimhere.m4a",
-    },
-    {
-      "author": "Bastion",
-      "name": "The Pantheon (Ain't Gonna Catch You)",
-      "link": "https://www.vipvgm.net/mu/mellow/bastion-pantheon.m4a",
     },
     {
       "author": "Braid",
@@ -211,24 +126,9 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/dawnofmana-kenjiito-risingsun(pianosolo).m4a",
     },
     {
-      "author": "de Blob 2",
-      "name": "Paradise Island",
-      "link": "https://www.vipvgm.net/mu/mellow/deblob2-paradiseisland.m4a",
-    },
-    {
-      "author": "Deadly Premonition",
-      "name": "The Woods and the Goddess",
-      "link": "https://www.vipvgm.net/mu/mellow/deadlypremonition-woodsandthegoddess.m4a",
-    },
-    {
       "author": "Deus Ex: Human Revolution",
       "name": "Thuul - The fall of Icarus",
       "link": "https://www.vipvgm.net/mu/mellow/dxhr-thuul-falloficarus.m4a",
-    },
-    {
-      "author": "DEEMO",
-      "name": "Sakura iro no yume",
-      "link": "https://www.vipvgm.net/mu/mellow/deemo-sakuraironoyume.m4a",
     },
     {
       "author": "DEEMO",
@@ -241,39 +141,14 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/deemo-yawninglion.m4a",
     },
     {
-      "author": "DoDonPachi DaiFukkatsu",
-      "name": "RESONATOR - Stage5",
-      "link": "https://www.vipvgm.net/mu/mellow/dodonpachidaifukkatsu-resonator-stage5.m4a",
-    },
-    {
       "author": "Donkey Kong Country",
       "name": "The OneUps - Aquatic Ambience",
       "link": "https://www.vipvgm.net/mu/mellow/dkc-oneups-aquaticambience.m4a",
     },
     {
-      "author": "Donkey Kong Country 2: Diddy's Kong Quest",
-      "name": "Michelle Heafy - In a Snow-Bound Land",
-      "link": "https://www.vipvgm.net/mu/mellow/dkc2-michelleheafy-inasnowboundland.m4a",
-    },
-    {
-      "author": "Donkey Kong Country: Tropical Freeze",
-      "name": "Fruit Factory",
-      "link": "https://www.vipvgm.net/mu/mellow/dkctr-fruitfactory.m4a",
-    },
-    {
-      "author": "Donkey Kong Country: Tropical Freeze",
-      "name": "Harvest Hazards-Underwater",
-      "link": "https://www.vipvgm.net/mu/mellow/dkctr-harvesthazardsunderwater.m4a",
-    },
-    {
       "author": "Donkey Kong Country: Tropical Freeze",
       "name": "Mangrove Cove-Underwater",
       "link": "https://www.vipvgm.net/mu/mellow/dkctr-mangrovecove-underwater.m4a",
-    },
-    {
-      "author": "Donkey Kong Country: Tropical Freeze",
-      "name": "Seashore War",
-      "link": "https://www.vipvgm.net/mu/dkctr-seashorewar.m4a",
     },
     {
       "author": "DuckTales",
@@ -291,19 +166,9 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/dw5-flowersofthefield.m4a",
     },
     {
-      "author": "Dynasty Warriors Online",
-      "name": "Cheerfulness of Spring",
-      "link": "https://www.vipvgm.net/mu/mellow/dwo-cheerfulnessofspring.m4a",
-    },
-    {
       "author": "Eador. Masters of the Broken World",
       "name": "The Boat and the Dream",
       "link": "https://www.vipvgm.net/mu/mellow/eadormotbw-boatandthedream.m4a",
-    },
-    {
-      "author": "Eador. Masters of the Broken World",
-      "name": "Song of Silver Lake",
-      "link": "https://www.vipvgm.net/mu/mellow/eadormotbw-songofsilverlake.m4a",
     },
     {
       "author": "Earthbound",
@@ -316,16 +181,6 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/earthbound-supersoulbros-coffeebreak.m4a",
     },
     {
-      "author": "Echochrome",
-      "name": "prime #5",
-      "link": "https://www.vipvgm.net/mu/mellow/echochrome-prime5.m4a",
-    },
-    {
-      "author": "Echochrome",
-      "name": "prime #7",
-      "link": "https://www.vipvgm.net/mu/echochrome-prime7.m4a",
-    },
-    {
       "author": "Fantasy Maiden Wars Scarlet",
       "name": "Dark Clouds ~ Ancient Temple in the Netherworld",
       "link": "https://www.vipvgm.net/mu/mellow/fantasymaidenwarsscarlet-darkclouds.m4a",
@@ -334,26 +189,6 @@ const tracklist = {
       "author": "Fantasy Maiden Wars Scarlet",
       "name": "The Dream is Here ~ Hiroshige No. 36",
       "link": "https://www.vipvgm.net/mu/mellow/fantasymaidenwarsscarlet-dreamishere.m4a",
-    },
-    {
-      "author": "Fez",
-      "name": "Forgotten",
-      "link": "https://www.vipvgm.net/mu/mellow/fez-forgotten.m4a",
-    },
-    {
-      "author": "Fez",
-      "name": "Majesty",
-      "link": "https://www.vipvgm.net/mu/fez-majesty.m4a",
-    },
-    {
-      "author": "Final Fantasy III",
-      "name": "Hyadain - Doga and Une",
-      "link": "https://www.vipvgm.net/mu/mellow/ff3-hyadain-doga&une.m4a",
-    },
-    {
-      "author": "Final Fantasy III",
-      "name": "Masatsugu Shinozaki, Risa Ohki, Katsuhiko Kinoshita - Once You Meet Her",
-      "link": "https://www.vipvgm.net/mu/mellow/ff3-masatsugushinozaki-onceyoumeether.m4a",
     },
     {
       "author": "Final Fantasy III",
@@ -374,11 +209,6 @@ const tracklist = {
       "author": "Final Fantasy IV",
       "name": "Maire Bhreatnach - Theme of Love",
       "link": "https://www.vipvgm.net/mu/mellow/ff4-mairebhreatnach-themeoflove.m4a",
-    },
-    {
-      "author": "Final Fantasy V",
-      "name": "Nobuo Uematsu - My Home, Sweet Home",
-      "link": "https://www.vipvgm.net/mu/mellow/ff5-nobuouematsu-myhomesweethome.m4a",
     },
     {
       "author": "Final Fantasy VI",
@@ -407,11 +237,6 @@ const tracklist = {
     },
     {
       "author": "Final Fantasy VII",
-      "name": "Mustin - Serenity",
-      "link": "https://www.vipvgm.net/mu/mellow/ff7-mustin-serenity.m4a",
-    },
-    {
-      "author": "Final Fantasy VII",
       "name": "Takashi Hoshide - Words Drowned by Fireworks",
       "link": "https://www.vipvgm.net/mu/mellow/ff7-takashihoshide-wordsdrownedoutbyfireworks.m4a",
     },
@@ -419,11 +244,6 @@ const tracklist = {
       "author": "Final Fantasy VIII",
       "name": "Naganori Sakakibara - Eyes on Me (Acoustic Guitar Version)",
       "link": "https://www.vipvgm.net/mu/mellow/ff8-naganorisakakibara-eyesonme(acousticguitar).m4a",
-    },
-    {
-      "author": "Final Fantasy IX",
-      "name": "Crossing Those Hills",
-      "link": "https://www.vipvgm.net/mu/ff9-crossingthosehills.m4a",
     },
     {
       "author": "Final Fantasy IX",
@@ -437,7 +257,7 @@ const tracklist = {
     },
     {
       "author": "Final Fantasy X",
-      "name": "Zephyr Cradle - Spira's Spectacle. home way",
+      "name": "Zephyr Cradle - Spira's Spectacle",
       "link": "https://www.vipvgm.net/mu/mellow/ff10-zephyrcradle-spirasspectacle.m4a",
     },
     {
@@ -446,24 +266,14 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/mellow/ff11-nanaamihgos-rolanberryfields.m4a",
     },
     {
-      "author": "Final Fantasy XI: Chains of Promathia",
+      "author": "Final Fantasy XI",
       "name": "Ayumi Iga - Distant Worlds",
       "link": "https://www.vipvgm.net/mu/mellow/ff11cop-ayumiiga-distantworlds.m4a",
-    },
-    {
-      "author": "Final Fantasy XI: Chains of Promathia",
-      "name": "Nanaa Mihgo's - Distant Worlds",
-      "link": "https://www.vipvgm.net/mu/mellow/ff11cop-nanaamihgos-distantworlds.m4a",
     },
     {
       "author": "Final Fantasy XIII",
       "name": "Ryu Kawamura - Serah's Theme Jazz Arrangement",
       "link": "https://www.vipvgm.net/mu/mellow/ff13-ryukawamura-serahsthemejazzarrange.m4a",
-    },
-    {
-      "author": "Final Fantasy Crystal Chronicles",
-      "name": "Moving Clouds on the River's Surface",
-      "link": "https://www.vipvgm.net/mu/mellow/ffcc-movingcloudsontheriverssurface.m4a",
     },
     {
       "author": "Fist of the North Star: Ken's Rage",
@@ -474,11 +284,6 @@ const tracklist = {
       "author": "For the Frog the Bell Tolls",
       "name": "Kazumi Totaka - Main Theme",
       "link": "https://www.vipvgm.net/mu/mellow/ftftbt-kazumitotaka-maintheme.m4a",
-    },
-    {
-      "author": "Fragile Dreams ~Farewell Ruins of the Moon~",
-      "name": "Goodbye",
-      "link": "https://www.vipvgm.net/mu/mellow/fragiledreams-goodbye.m4a",
     },
     {
       "author": "Fragile Dreams ~Farewell Ruins of the Moon~",
@@ -746,11 +551,6 @@ const tracklist = {
       "link": "https://www.vipvgm.net/mu/ragnarokonline2-sailing.m4a",
     },
     {
-      "author": "Ragnarok Online 2",
-      "name": "Yoru",
-      "link": "https://www.vipvgm.net/mu/mellow/ragnarokonline2-yoru.m4a",
-    },
-    {
       "author": "Rise of Nations",
       "name": "Battle at Witch Creek",
       "link": "https://www.vipvgm.net/mu/mellow/ron-battleatwitchcreek.m4a",
@@ -759,11 +559,6 @@ const tracklist = {
       "author": "Romancing SaGa 2",
       "name": "Kenji Ito - Seven Heroes Battle",
       "link": "https://www.vipvgm.net/mu/mellow/romancingsaga2-kenjiito-sevenheroesbattle.m4a",
-    },
-    {
-      "author": "Secret of Mana",
-      "name": "Into the Thick of It",
-      "link": "https://www.vipvgm.net/mu/mellow/secretofmana-intothethickofit.m4a",
     },
     {
       "author": "Secret of Mana",
@@ -777,11 +572,6 @@ const tracklist = {
     },
     {
       "author": "Secret of Mana",
-      "name": "Jorito feat. JoyDreamer, JohnStacy - Whispers (Whisper and Mantra)",
-      "link": "https://www.vipvgm.net/mu/mellow/secretofmana-jorito-whispers.m4a",
-    },
-    {
-      "author": "Secret of Mana",
       "name": "Super Guitar Bros - The Summer Sky is Blue",
       "link": "https://www.vipvgm.net/mu/mellow/secretofmana-superguitarbros-summerskyisblue.m4a",
     },
@@ -789,11 +579,6 @@ const tracklist = {
       "author": "Secret of Mana",
       "name": "William Reyes - Together Always",
       "link": "https://www.vipvgm.net/mu/mellow/secretofmana-williamreyes-togetheralways.m4a",
-    },
-    {
-      "author": "Shenmue",
-      "name": "Antiquity Tree",
-      "link": "https://www.vipvgm.net/mu/mellow/shenmue-antiquitytree.m4a",
     },
     {
       "author": "Shenmue",
@@ -817,11 +602,6 @@ const tracklist = {
     },
     {
       "author": "The Sims",
-      "name": "Building Mode 6",
-      "link": "https://www.vipvgm.net/mu/mellow/sims-buildingmode6.m4a",
-    },
-    {
-      "author": "The Sims",
       "name": "Neighborhood",
       "link": "https://www.vipvgm.net/mu/mellow/sims-neighborhood.m4a",
     },
@@ -829,11 +609,6 @@ const tracklist = {
       "author": "The Sims",
       "name": "Now Entering",
       "link": "https://www.vipvgm.net/mu/mellow/sims-nowentering.m4a",
-    },
-    {
-      "author": "The Sims",
-      "name": "SIM Nights",
-      "link": "https://www.vipvgm.net/mu/mellow/sims-simnights.m4a",
     },
     {
       "author": "The Sims: Hot Date",
@@ -844,16 +619,6 @@ const tracklist = {
       "author": "The Sims: Hot Date",
       "name": "The Club",
       "link": "https://www.vipvgm.net/mu/mellow/simshotdate-club.m4a",
-    },
-    {
-      "author": "The Sims: Hot Date",
-      "name": "Dizzy Sim",
-      "link": "https://www.vipvgm.net/mu/mellow/simshotdate-dizzysim.m4a",
-    },
-    {
-      "author": "The Sims 2",
-      "name": "Sim Heaven",
-      "link": "https://www.vipvgm.net/mu/mellow/sims2-simheaven.m4a",
     },
     {
       "author": "The Sims 2: Apartment Life",
@@ -869,11 +634,6 @@ const tracklist = {
       "author": "The Sims 3: Pets",
       "name": "Cul-De-Sac of Memories",
       "link": "https://www.vipvgm.net/mu/mellow/sims3pets-culdesacofmemories.m4a",
-    },
-    {
-      "author": "The Sims 3: Supernatural",
-      "name": "Universal Lobby",
-      "link": "https://www.vipvgm.net/mu/mellow/sims3supernatural-universallobby.m4a",
     },
     {
       "author": "The Sims 4 ",
@@ -1017,7 +777,7 @@ const tracklist = {
     },
     {
       "author": "TH12.8: Touhou Sangessei ~ Great Fairy Wars",
-      "name": "dBu music - Haru no Hyousei -Sei- ~ Forgot.",
+      "name": "dBu music - Haru no Hyousei ~ Forgot.",
       "link": "https://www.vipvgm.net/mu/mellow/th128-dBumusic-harunohyousei.m4a",
     },
     {
@@ -1042,22 +802,22 @@ const tracklist = {
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - CAPRICE FOR LUTE ~Caprice for the Lute~",
+      "name": "Yoko Kanno - Caprice for the Lute",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-capriceforlute.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - CLOSE TO HOME ~Close to Home~",
+      "name": "Yoko Kanno - Close to Home",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-closetohome.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - EMPTY EYES ~Emerald Sea~",
+      "name": "Yoko Kanno - Emerald Sea",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-emptyeyes.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - MAST IN THE MIST ~Misty Harbour~",
+      "name": "Yoko Kanno - Misty Harbour",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-mastinthemist.m4a",
     },
     {
@@ -1117,28 +877,13 @@ const tracklist = {
     },
     {
       "author": "Xenogears",
-      "name": "Yasunori Mitsuda, Millenial Fair - CREID",
-      "link": "https://www.vipvgm.net/mu/mellow/xenogears-yasunorimitsuda-creid.m4a",
-    },
-    {
-      "author": "Xenogears",
-      "name": "Yasunori Mitsuda, Millenial Fair - October Mermaid",
-      "link": "https://www.vipvgm.net/mu/mellow/xenogears-yasunorimitsuda-octobermermaid.m4a",
-    },
-    {
-      "author": "Xenogears",
       "name": "Natsumi Kameoka, Bulgarian Symphony Orchestra - SMALL TWO OF PIECES -Orchestral Version-",
       "link": "https://www.vipvgm.net/mu/mellow/xenogears-natsumikameoka-small2ofpieces(orchestral).m4a",
     },
     {
-      "author": "All Tracks",
-      "name": "&#169; & &#8471; Their Respective Owners",
-      "link": "https://www.vipvgm.net/mu/mellow/aowda-16m1.m4a",
-    },
-    {
-      "author": "I have spoken with God",
-      "name": "He has abandoned us",
-      "link": "https://www.vipvgm.net/mu/mellow/aowda-16m1.m4a",
+      "author": "Fragile Dreams",
+      "name": "Goodbye",
+      "link": "https://www.vipvgm.net/mu/mellow/fragiledreams-goodbye.m4a",
     }
   ]
 }
