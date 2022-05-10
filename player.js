@@ -108,22 +108,39 @@ $controls.addEventListener('click', function (event) {
 document.addEventListener("keyup", function (event) {
   event.preventDefault();
   const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-  switch (key) { // change to event.key to key to use the above variable
-    case "ArrowLeft":
-      $audio.currentTime -= 10;
-      if ($audio.currentTime <= 0){
+  if (event.ctrlKey) {
+    switch (key) {
+      case "ArrowLeft":
         playPreviousTrack();
-      }
-      break;
-    case "ArrowRight":
-      $audio.currentTime += 20;
-      break;
-    case "ArrowUp":
-      $audio.volume += .05;
-      break;
-    case "ArrowDown":
-      $audio.volume -= .05;
-      break;
+        break;
+      case "ArrowRight":
+        playNextTrack();
+        break;
+      case "ArrowUp":
+        if (audio.volume <= .95) {
+          $audio.volume += .05
+          $volumeSlider.value = $audio.volume * 100;
+        }
+        break;
+      case "ArrowDown":
+        if (audio.volume >= .05) {
+          $audio.volume -= .05
+          $volumeSlider.value = $audio.volume * 100;
+        }
+        break;
+    }
+  } else {
+    switch (key) { // change to event.key to key to use the above variable
+      case "ArrowLeft":
+        $audio.currentTime -= 10;
+        if ($audio.currentTime <= 0) {
+          playPreviousTrack();
+        }
+        break;
+      case "ArrowRight":
+        $audio.currentTime += 20;
+        break;
+    }
   }
 });
 
