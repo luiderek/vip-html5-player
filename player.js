@@ -74,7 +74,8 @@ let $btnPause = document.querySelector('.lucide-pause');
 
 $controls.addEventListener('click', function (event) {
   let targetclass = event.target.className;
-  if (targetclass !== 'controls' && targetclass !== 'volume-slider') {
+  let checks = ['controls', 'volume-slider', 'timer']
+  if (!checks.includes(targetclass)) {
     let target = event.target.closest('svg');
     let type = target.classList[1].split('-').slice(1).join('-');
     switch (type) {
@@ -129,3 +130,20 @@ $volumeSlider.addEventListener('change', function (event) {
     $audio.volume = volume;
   }
 });
+
+const $timer = document.querySelector('.timer');
+$audio.ontimeupdate = function () {
+  $timer.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+};
+
+function formatTime(seconds) {
+  seconds = ~~seconds;
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  return [h, m > 9 ? m : h ? '0' + m : m || '0', s > 9 ? s : '0' + s]
+    .filter(a => a)
+    .join(':')
+}
+
+// If hitting play while the page just loaded, it should load up the next song.

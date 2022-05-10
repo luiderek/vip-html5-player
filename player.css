@@ -6,23 +6,26 @@ body {
 .now-playing {
   position: fixed;
   width: 100%;
-  background-color: #2820c6;
+  background-color: #1b1852;
   color: rgb(255, 174, 0);
   text-align: center;
+  font-size: 120%;
 }
 
 .controls {
   position: fixed;
   width: 100%;
-  background-color: #202065;
+  background-color: #13136d;
   color: #ffffff;
   user-select: none;
-  margin-top: 0.95rem;
+  margin-top: 1.13rem;
+  display: flex;
+  justify-content: center;
 }
 
 .controls>svg {
-  transform: scale(.75);
-  margin-bottom: -0.2rem;
+  transform: scale(.6);
+  margin-bottom: -0.05rem;
 }
 
 polygon {
@@ -32,11 +35,16 @@ polygon {
 .volume-slider {
   width: 20%;
   transform: scale(.7);
-  margin-left: -1.7rem;
+  margin-inline: -2%;
+}
+
+.timer {
+  margin-left: 1rem;
+  margin-block: auto;
 }
 
 .track-list {
-  padding-top: 2.4rem;
+  padding-top: 2.55rem;
 }
 
 .track {
@@ -58,6 +66,7 @@ polygon {
 .track-list>.selected-track {
   color: rgb(18, 14, 97);
   background-color: rgb(241, 142, 29);
+  border: rgb(255 186 58) solid 1px;
 }
 
 .track:hover {
