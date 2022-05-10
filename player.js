@@ -62,9 +62,9 @@ let $nowPlaying = document.querySelector('.now-playing');
 $trackList.addEventListener('click', function (event) {
   // The check is in case people click and drag the list, for some reason.
   if (event.target.className !== 'track-list') {
-    changeSelectedTrack(event.target);
     let selected_id = event.target.classList[1].split('-')[1];
     currentTrackIndex = selected_id-1;
+    changeSelectedTrack(event.target);
     $audio.setAttribute('src', trackObject[currentTrackIndex].link);
     play();
   }
@@ -157,9 +157,15 @@ function playNextTrack() {
   }
   currentTrackIndex++;
   let $newTrack = document.querySelector(`.t-${currentTrackIndex+1}`);
-  changeSelectedTrack($newTrack);
-  $audio.setAttribute('src', trackObject[currentTrackIndex].link);
-  play();
+  if ($newTrack){
+    changeSelectedTrack($newTrack);
+    $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+    play();
+  } else {
+    $nowPlaying.textContent = 'Currently Not Playing Any Track';
+    $timer.textContent = '0:00 / 0:00';
+    currentTrackIndex = null;
+  }
 }
 
 function playPreviousTrack() {
