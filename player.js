@@ -2,6 +2,7 @@ let parser = new DOMParser();
 
 let xhr = new XMLHttpRequest();
 let trackObject;
+let currentTrackIndex = 1;
 
 xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
 xhr.onreadystatechange = function () {
@@ -63,7 +64,8 @@ $trackList.addEventListener('click', function (event) {
   if (event.target.className !== 'track-list') {
     changeSelectedTrack(event.target);
     let selected_id = event.target.classList[1].split('-')[1];
-    $audio.setAttribute('src', trackObject[selected_id - 1].link);
+    currentTrackIndex = selected_id-1;
+    $audio.setAttribute('src', trackObject[currentTrackIndex].link);
     play();
   }
 });
@@ -85,6 +87,8 @@ $controls.addEventListener('click', function (event) {
         play(); break;
       case 'volume-1': case 'volume-x':
         toggleMute(); break;
+      case 'skip-forward':
+        playNextTrack(); break;
     }
   }
 });
@@ -119,8 +123,7 @@ function changeSelectedTrack(target) {
     $prev_selected.classList.remove('selected-track');
   }
   target.classList.add('selected-track');
-  let selected_id = event.target.classList[1].split('-')[1];
-  $nowPlaying.textContent = `${trackObject[selected_id - 1].author} - ${trackObject[selected_id - 1].name}`;
+  $nowPlaying.textContent = `${trackObject[currentTrackIndex].author} - ${trackObject[currentTrackIndex].name}`;
 }
 
 const $volumeSlider = document.querySelector('.volume-slider');
@@ -132,9 +135,21 @@ $volumeSlider.addEventListener('change', function (event) {
 });
 
 const $timer = document.querySelector('.timer');
-$audio.ontimeupdate = function () {
+$audio.ontimeupdate = () => {
   $timer.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
 };
+
+$audio.onended = () => {
+  playNextTrack();
+}
+
+function playNextTrack() {
+  currentTrackIndex++;
+  $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+  play();
+  let $newTrack = document.querySelector(`.t-${currentTrackIndex+1}`);
+  changeSelectedTrack($newTrack);
+}
 
 function formatTime(seconds) {
   seconds = ~~seconds;
