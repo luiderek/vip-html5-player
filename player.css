@@ -24,8 +24,13 @@ body {
 }
 
 .controls>svg {
-  transform: scale(.6);
   margin-bottom: -0.05rem;
+    transform: scale(.75);
+}
+
+.controls>svg:hover {
+  color: white;
+  transition-duration: .15s;
 }
 
 polygon {
@@ -33,9 +38,25 @@ polygon {
 }
 
 .volume-slider {
-  width: 20%;
+  width: 25%;
   transform: scale(.7);
   margin-inline: -2%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background-color: rgb(198, 129, 0);
+  width: min(250px, 15%);
+  height: .55rem;
+  margin-block: auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: rgb(32, 88, 218);
+  width: 8px;
+  height: 1.2rem;
+  border-radius: 3px;
 }
 
 .timer {
