@@ -16,36 +16,6 @@ window.addEventListener('load', function (e) {
   }
 });
 
-// xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
-// xhr.onreadystatechange = function () {
-//   if (xhr.readyState === XMLHttpRequest.DONE) {
-//     let status = xhr.status;
-//     if (status === 0 || (status >= 200 && status < 400)) {
-//       xmlMellow = xhr.responseText;
-//       xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
-//       let tracklist = xmlParsed.children[0].children[0].children;
-//       trackObject = tracklistObject(tracklist);
-//     } else {
-//       console.error('There was a mistake with XHR of the track list');
-//     }
-//   }
-// }
-// xhr.send();
-
-// function tracklistObject(trackHTMLCollection) {
-//   let result = [];
-//   let next_id = 0;
-//   for (let track of trackHTMLCollection) {
-//     result.push({
-//       author: track.children[0].textContent,
-//       name: track.children[1].textContent,
-//       link: track.children[2].textContent
-//     })
-//   }
-//   return result;
-// }
-// These two + JSON.stringify(trackobject, null, 0) gave me the contents of mellow.json.
-
 function appendTrackToList(track) {
   let $div = document.createElement('div');
   $div.className = `track t-${track.id}`;
@@ -100,6 +70,9 @@ $controls.addEventListener('click', function (event) {
         break;
       case 'skip-back':
         playPreviousTrack();
+        break;
+      case 'shuffle':
+        shuffle();
         break;
     }
   }
@@ -162,6 +135,38 @@ function play() {
   $btnPause.classList.remove('hidden');
 }
 
+function shuffle() {
+  let currentPlaying = trackObject.splice(currentTrackIndex, 1)
+
+  let shuffleIndex = trackObject.length, randomIndex;
+  while (shuffleIndex != 0) {
+    randomIndex = Math.floor(Math.random() * shuffleIndex);
+    shuffleIndex--;
+    [trackObject[shuffleIndex], trackObject[randomIndex]] = [
+      trackObject[randomIndex], trackObject[shuffleIndex]];
+  }
+
+  trackObject.unshift(currentPlaying[0]);
+
+  for (let i = 0; i < trackObject.length; i++) {
+    delete trackObject[i].id;
+    trackObject[i].id = i + 1;
+  }
+
+  while ($trackList.firstChild) {
+    $trackList.firstChild.remove();
+  }
+
+  for (let track of trackObject) {
+    appendTrackToList(track);
+  }
+
+  currentTrackIndex = 0;
+  $firsttrack = document.querySelector('.t-1');
+  changeSelectedTrack($firsttrack);
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
 const $volumeUnMuted = document.querySelector('.lucide-volume-1');
 const $volumeMuted = document.querySelector('.lucide-volume-x');
 function toggleMute() {
@@ -214,6 +219,10 @@ function playNextTrack() {
     $nowPlaying.textContent = 'Currently Not Playing Any Track';
     $timer.textContent = '0:00 / 0:00';
     currentTrackIndex = null;
+    if ($prev_selected) {
+      $prev_selected.classList.remove('selected-track');
+    }
+    $audio.setAttribute('src', "");
   }
 }
 
@@ -224,9 +233,20 @@ function playPreviousTrack() {
     } else {
       currentTrackIndex--;
       let $newTrack = document.querySelector(`.t-${currentTrackIndex + 1}`);
-      changeSelectedTrack($newTrack);
-      $audio.setAttribute('src', trackObject[currentTrackIndex].link);
-      play();
+      if ($newTrack) {
+        changeSelectedTrack($newTrack);
+        $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+        play();
+      } else {
+        $nowPlaying.textContent = 'Currently Not Playing Any Track';
+        $timer.textContent = '0:00 / 0:00';
+        currentTrackIndex = null;
+        $prev_selected = document.querySelector('.selected-track')
+        if ($prev_selected) {
+          $prev_selected.classList.remove('selected-track');
+        }
+        $audio.setAttribute('src', "");
+      }
     }
   }
 }
@@ -240,5 +260,3 @@ function formatTime(seconds) {
     .filter(a => a)
     .join(':')
 }
-
-// If hitting play while the page just loaded, it should load up the next song.
