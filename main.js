@@ -3,6 +3,7 @@ let parser = new DOMParser();
 let xhr = new XMLHttpRequest();
 let trackObject = tracklist.tracks;
 let currentTrackIndex = null;
+let playerActive = 0;
 const $trackList = document.querySelector('.track-list');
 
 window.addEventListener('load', function (e) {
@@ -102,7 +103,7 @@ document.addEventListener("keyup", function (event) {
         }
         break;
     }
-  } else {
+  } else if (playerActive) {
     switch (key) { // change to event.key to key to use the above variable
       case "ArrowLeft":
         $audio.currentTime -= 10;
@@ -133,20 +134,19 @@ function play() {
   }
   $btnPlay.classList.add('hidden');
   $btnPause.classList.remove('hidden');
+  playerActive = 1;
 }
 
 function shuffle() {
-  let currentPlaying = trackObject.splice(currentTrackIndex, 1)
 
-  let shuffleIndex = trackObject.length, randomIndex;
-  while (shuffleIndex != 0) {
-    randomIndex = Math.floor(Math.random() * shuffleIndex);
-    shuffleIndex--;
-    [trackObject[shuffleIndex], trackObject[randomIndex]] = [
-      trackObject[randomIndex], trackObject[shuffleIndex]];
+  if (!playerActive) {
+    scrambleTrackOrder();
+    play();
+  } else {
+    let currentPlaying = trackObject.splice(currentTrackIndex, 1)
+    scrambleTrackOrder();
+    trackObject.unshift(currentPlaying[0]);
   }
-
-  trackObject.unshift(currentPlaying[0]);
 
   for (let i = 0; i < trackObject.length; i++) {
     delete trackObject[i].id;
@@ -165,6 +165,17 @@ function shuffle() {
   $firsttrack = document.querySelector('.t-1');
   changeSelectedTrack($firsttrack);
   document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function scrambleTrackOrder() {
+  let randomIndex;
+  let shuffleIndex = trackObject.length;
+  while (shuffleIndex != 0) {
+    randomIndex = Math.floor(Math.random() * shuffleIndex);
+    shuffleIndex--;
+    [trackObject[shuffleIndex], trackObject[randomIndex]] = [
+      trackObject[randomIndex], trackObject[shuffleIndex]];
+  }
 }
 
 const $volumeUnMuted = document.querySelector('.lucide-volume-1');
@@ -216,13 +227,7 @@ function playNextTrack() {
     $audio.setAttribute('src', trackObject[currentTrackIndex].link);
     play();
   } else {
-    $nowPlaying.textContent = 'Currently Not Playing Any Track';
-    $timer.textContent = '0:00 / 0:00';
-    currentTrackIndex = null;
-    if ($prev_selected) {
-      $prev_selected.classList.remove('selected-track');
-    }
-    $audio.setAttribute('src', "");
+    setPlayerInactive();
   }
 }
 
@@ -238,17 +243,22 @@ function playPreviousTrack() {
         $audio.setAttribute('src', trackObject[currentTrackIndex].link);
         play();
       } else {
-        $nowPlaying.textContent = 'Currently Not Playing Any Track';
-        $timer.textContent = '0:00 / 0:00';
-        currentTrackIndex = null;
-        $prev_selected = document.querySelector('.selected-track')
-        if ($prev_selected) {
-          $prev_selected.classList.remove('selected-track');
-        }
-        $audio.setAttribute('src', "");
+        setPlayerInactive();
       }
     }
   }
+}
+
+function setPlayerInactive() {
+  $nowPlaying.textContent = 'Currently Not Playing Any Track';
+  $timer.textContent = '0:00 / 0:00';
+  currentTrackIndex = null;
+  $prev_selected = document.querySelector('.selected-track')
+  if ($prev_selected) {
+    $prev_selected.classList.remove('selected-track');
+  }
+  $audio.setAttribute('src', "");
+  playerActive = 0;
 }
 
 function formatTime(seconds) {
