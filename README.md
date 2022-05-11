@@ -7,7 +7,7 @@ Mostly an exercise of rewriting jQuery calls into native JavaScript, and reading
 
 Songs are currently a subset of the "Mellow" playlist of the vidya interweb playlist, with less vocals and wind instruments.
 
-[Listen Here](http://luiderek.github.io/vip-html5-player)
+[Listen Here](http://luiderek.github.io/vip-player)
 ----------------------------------------------------------
 
 [HTML5 Port of VIP](http://fpgaminer.github.io/vip-html5-player) [(github)](https://github.com/fpgaminer/vip-html5-player)
