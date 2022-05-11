@@ -1,4 +1,4 @@
-const tracklist = {
+const trackObject = {
   "tracks": [
     {
       "author": "Alcarys Complex",

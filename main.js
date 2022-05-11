@@ -1,54 +1,24 @@
-let parser = new DOMParser();
-
-let xhr = new XMLHttpRequest();
-let trackObject = tracklist.tracks;
-let currentTrackIndex = null;
-let playerActive = 0;
 const $trackList = document.querySelector('.track-list');
-
-window.addEventListener('load', function (e) {
-  // Giving all the tracks ID numbers, which the player needs.
-  for (let i = 0; i < trackObject.length; i++) {
-    trackObject[i].id = i + 1;
-  }
-
-  for (let track of trackObject) {
-    appendTrackToList(track);
-  }
-});
-
-function appendTrackToList(track) {
-  let $div = document.createElement('div');
-  $div.className = `track t-${track.id}`;
-  if (track.name.includes(' - ')) {
-    $div.textContent = track.name.split(' - ').slice(1).join('-')
-  } else {
-    $div.textContent = track.name;
-  }
-  // [0] author [1] trackname [2] resource link
-  $trackList.appendChild($div);
-}
-
-let $audio = document.querySelector('#audio');
-let volume = .5;
-$audio.volume = volume;
-
 let $nowPlaying = document.querySelector('.now-playing');
-
-$trackList.addEventListener('click', function (event) {
-  // The check is in case people click and drag the list, for some reason.
-  if (event.target.className !== 'track-list') {
-    let selected_id = event.target.classList[1].split('-')[1];
-    currentTrackIndex = selected_id - 1;
-    changeSelectedTrack(event.target);
-    $audio.setAttribute('src', trackObject[currentTrackIndex].link);
-    play();
-  }
-});
-
 let $controls = document.querySelector('.controls');
 let $btnPlay = document.querySelector('.lucide-play');
 let $btnPause = document.querySelector('.lucide-pause');
+
+const $volumeUnMuted = document.querySelector('.lucide-volume-1');
+const $volumeMuted = document.querySelector('.lucide-volume-x');
+const $volumeSlider = document.querySelector('.volume-slider');
+const $timer = document.querySelector('.timer');
+
+let $audio = document.querySelector('#audio');
+let volume = .6;
+$audio.volume = volume;
+
+let tracks = trackObject.tracks;
+let trackIndex = null;
+
+window.addEventListener('load', function (e) {
+  renderTracksWithIds()
+});
 
 $controls.addEventListener('click', function (event) {
   let targetclass = event.target.className;
@@ -57,11 +27,11 @@ $controls.addEventListener('click', function (event) {
     let target = event.target.closest('svg');
     let type = target.classList[1].split('-').slice(1).join('-');
     switch (type) {
-      case 'pause':
-        pause();
-        break;
       case 'play':
         play();
+        break;
+      case 'pause':
+        pause();
         break;
       case 'volume-1': case 'volume-x':
         toggleMute();
@@ -79,9 +49,20 @@ $controls.addEventListener('click', function (event) {
   }
 });
 
+$trackList.addEventListener('click', function (event) {
+  // The check is in case people click and drag the list, for some reason.
+  if (event.target.className !== 'track-list') {
+    let selected_id = event.target.classList[1].split('-')[1];
+    trackIndex = selected_id - 1;
+    changeSelectedTrack(event.target);
+    $audio.setAttribute('src', tracks[trackIndex].link);
+    play();
+  }
+});
+
 document.addEventListener("keyup", function (event) {
   event.preventDefault();
-  const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+  const key = event.key;
   if (event.ctrlKey) {
     switch (key) {
       case "ArrowLeft":
@@ -104,12 +85,11 @@ document.addEventListener("keyup", function (event) {
         break;
     }
   } else if (playerActive) {
-    switch (key) { // change to event.key to key to use the above variable
+    switch (key) {
       case "ArrowLeft":
         $audio.currentTime -= 10;
-        if ($audio.currentTime <= 0) {
+        if ($audio.currentTime <= 0)
           playPreviousTrack();
-        }
         break;
       case "ArrowRight":
         $audio.currentTime += Math.max($audio.duration / 8, 15);
@@ -118,15 +98,45 @@ document.addEventListener("keyup", function (event) {
   }
 });
 
-function pause() {
-  $audio.pause();
-  $btnPlay.classList.remove('hidden');
-  $btnPause.classList.add('hidden');
+$volumeSlider.addEventListener('change', function (event) {
+  volume = event.target.value / 100
+  if ($volumeMuted.classList.contains('hidden'))
+    $audio.volume = volume;
+});
+
+$audio.ontimeupdate = () => {
+  $timer.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+};
+
+$audio.onended = () => {
+  playNextTrack();
+}
+
+function appendTrackToList(track) {
+  let $div = document.createElement('div');
+  $div.className = `track t-${track.id}`;
+  if (track.name.includes(' - ')) {
+    $div.textContent = track.name.split(' - ').slice(1).join('-')
+  } else {
+    $div.textContent = track.name;
+  }
+  $trackList.appendChild($div);
+}
+
+function renderTracksWithIds() {
+  for (let i = 0; i < tracks.length; i++) {
+    if (tracks[i].id)
+      delete tracks[i].id;
+    tracks[i].id = i + 1;
+  }
+  for (let track of tracks) {
+    appendTrackToList(track);
+  }
 }
 
 function play() {
-  if (currentTrackIndex === null) {
-    currentTrackIndex = -1;
+  if (trackIndex === null) {
+    trackIndex = -1;
     playNextTrack();
   }
   else {
@@ -137,31 +147,27 @@ function play() {
   playerActive = 1;
 }
 
-function shuffle() {
+function pause() {
+  $audio.pause();
+  $btnPlay.classList.remove('hidden');
+  $btnPause.classList.add('hidden');
+}
 
-  if (!playerActive) {
+function shuffle() {
+  if (trackIndex === null) {
     scrambleTrackOrder();
     play();
   } else {
-    let currentPlaying = trackObject.splice(currentTrackIndex, 1)
+    let currentPlaying = tracks.splice(trackIndex, 1)
     scrambleTrackOrder();
-    trackObject.unshift(currentPlaying[0]);
-  }
-
-  for (let i = 0; i < trackObject.length; i++) {
-    delete trackObject[i].id;
-    trackObject[i].id = i + 1;
+    tracks.unshift(currentPlaying[0]);
   }
 
   while ($trackList.firstChild) {
     $trackList.firstChild.remove();
   }
-
-  for (let track of trackObject) {
-    appendTrackToList(track);
-  }
-
-  currentTrackIndex = 0;
+  renderTracksWithIds()
+  trackIndex = 0;
   $firsttrack = document.querySelector('.t-1');
   changeSelectedTrack($firsttrack);
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -169,17 +175,15 @@ function shuffle() {
 
 function scrambleTrackOrder() {
   let randomIndex;
-  let shuffleIndex = trackObject.length;
+  let shuffleIndex = tracks.length;
   while (shuffleIndex != 0) {
     randomIndex = Math.floor(Math.random() * shuffleIndex);
     shuffleIndex--;
-    [trackObject[shuffleIndex], trackObject[randomIndex]] = [
-      trackObject[randomIndex], trackObject[shuffleIndex]];
+    [tracks[shuffleIndex], tracks[randomIndex]] = [
+      tracks[randomIndex], tracks[shuffleIndex]];
   }
 }
 
-const $volumeUnMuted = document.querySelector('.lucide-volume-1');
-const $volumeMuted = document.querySelector('.lucide-volume-x');
 function toggleMute() {
   if ($volumeMuted.classList.contains('hidden')) {
     $audio.volume = 0;
@@ -191,40 +195,34 @@ function toggleMute() {
 }
 
 function changeSelectedTrack(target) {
-  $prev_selected = document.querySelector('.selected-track')
-  if ($prev_selected) {
-    $prev_selected.classList.remove('selected-track');
-  }
+  clearSelectedTrack();
   target.classList.add('selected-track');
-  $nowPlaying.textContent = `${trackObject[currentTrackIndex].author} - ${trackObject[currentTrackIndex].name}`;
+  $nowPlaying.textContent = `${tracks[trackIndex].author} - ${tracks[trackIndex].name}`;
 }
 
-const $volumeSlider = document.querySelector('.volume-slider');
-$volumeSlider.addEventListener('change', function (event) {
-  volume = event.target.value / 100
-  if ($volumeMuted.classList.contains('hidden')) {
-    $audio.volume = volume;
-  }
-});
+function clearSelectedTrack() {
+  const $existingSelected = document.querySelector('.selected-track')
+  if ($existingSelected)
+    $existingSelected.classList.remove('selected-track');
+}
 
-const $timer = document.querySelector('.timer');
-$audio.ontimeupdate = () => {
-  $timer.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
-};
-
-$audio.onended = () => {
-  playNextTrack();
+function setPlayerInactive() {
+  $nowPlaying.textContent = 'Currently Not Playing Any Track';
+  $timer.textContent = '0:00 / 0:00';
+  trackIndex = null;
+  clearSelectedTrack();
+  $audio.setAttribute('src', "");
+  pause();
 }
 
 function playNextTrack() {
-  if (currentTrackIndex === null) {
-    currentTrackIndex = -1;
-  }
-  currentTrackIndex++;
-  let $newTrack = document.querySelector(`.t-${currentTrackIndex + 1}`);
+  if (trackIndex === null)
+    trackIndex = -1;
+  trackIndex++;
+  let $newTrack = document.querySelector(`.t-${trackIndex + 1}`);
   if ($newTrack) {
     changeSelectedTrack($newTrack);
-    $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+    $audio.setAttribute('src', tracks[trackIndex].link);
     play();
   } else {
     setPlayerInactive();
@@ -232,33 +230,21 @@ function playNextTrack() {
 }
 
 function playPreviousTrack() {
-  if (currentTrackIndex !== null) {
+  if (trackIndex !== null) {
     if ($audio.currentTime > 3) {
       $audio.currentTime = 0;
     } else {
-      currentTrackIndex--;
-      let $newTrack = document.querySelector(`.t-${currentTrackIndex + 1}`);
+      trackIndex--;
+      let $newTrack = document.querySelector(`.t-${trackIndex + 1}`);
       if ($newTrack) {
         changeSelectedTrack($newTrack);
-        $audio.setAttribute('src', trackObject[currentTrackIndex].link);
+        $audio.setAttribute('src', tracks[trackIndex].link);
         play();
       } else {
         setPlayerInactive();
       }
     }
   }
-}
-
-function setPlayerInactive() {
-  $nowPlaying.textContent = 'Currently Not Playing Any Track';
-  $timer.textContent = '0:00 / 0:00';
-  currentTrackIndex = null;
-  $prev_selected = document.querySelector('.selected-track')
-  if ($prev_selected) {
-    $prev_selected.classList.remove('selected-track');
-  }
-  $audio.setAttribute('src', "");
-  playerActive = 0;
 }
 
 function formatTime(seconds) {

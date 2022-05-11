@@ -1,3 +1,6 @@
+let xhr = new XMLHttpRequest();
+let parser = new DOMParser();
+
 xhr.open('GET', 'https://vip.aersia.net/roster-mellow.xml');
 xhr.onreadystatechange = function () {
   if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -6,7 +9,7 @@ xhr.onreadystatechange = function () {
       xmlMellow = xhr.responseText;
       xmlParsed = parser.parseFromString(xmlMellow, "text/xml");
       let tracklist = xmlParsed.children[0].children[0].children;
-      trackObject = tracklistObject(tracklist);
+      tracks = tracklistObject(tracklist);
     } else {
       console.error('There was a mistake with XHR of the track list');
     }
