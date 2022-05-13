@@ -25,7 +25,8 @@ body {
 
 .controls>svg {
   cursor: pointer;
-  margin-bottom: -0.05rem;
+  margin-bottom: -0.04rem;
+  margin-left: .25rem;
   transform: scale(.75);
 }
 
@@ -39,17 +40,17 @@ polygon {
 }
 
 .volume-slider {
-  width: 25%;
   transform: scale(.7);
-  margin-inline: -2%;
+  margin-inline: -.85rem;
 }
 
 input[type=range] {
   -webkit-appearance: none;
   background-color: rgb(198, 129, 0);
-  width: min(250px, 15%);
+  width: 100px;
   height: .55rem;
-  margin-block: auto;
+  margin-top: .5rem;
+  margin-bottom: 0.385rem;
 }
 
 input[type="range"]::-webkit-slider-thumb {
