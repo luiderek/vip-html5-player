@@ -196,6 +196,7 @@ function toggleMute() {
 function changeSelectedTrack(target) {
   clearSelectedTrack();
   target.classList.add('selected-track');
+  document.title = tracks[trackIndex].name;
   $nowPlaying.textContent = `${tracks[trackIndex].author} - ${tracks[trackIndex].name}`;
 }
 
@@ -210,6 +211,7 @@ function setPlayerInactive() {
   $timer.textContent = '0:00 / 0:00';
   trackIndex = null;
   clearSelectedTrack();
+  document.title = 'scuffed internet playlist';
   $audio.setAttribute('src', "");
   pause();
 }
