@@ -84,7 +84,7 @@ document.addEventListener("keyup", function (event) {
         }
         break;
     }
-  } else if (playerActive) {
+  } else if (trackIndex !== null) {
     switch (key) {
       case "ArrowLeft":
         $audio.currentTime -= 10;
@@ -144,7 +144,6 @@ function play() {
   }
   $btnPlay.classList.add('hidden');
   $btnPause.classList.remove('hidden');
-  playerActive = 1;
 }
 
 function pause() {
