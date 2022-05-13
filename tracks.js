@@ -1,9 +1,19 @@
 const trackObject = {
   "tracks": [
     {
-      "author": "Alcarys Complex",
-      "name": "Admiral",
-      "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-admiral.m4a",
+      "author": "Animal Crossing",
+      "name": "Kenta Nagata - Title",
+      "link": "https://www.vipvgm.net/mu/mellow/animalcrossing-kentanagata-title.m4a",
+    },
+    {
+      "author": "Metal Gear Solid 3: Snake Eater",
+      "name": "Sea Breeze",
+      "link": "https://www.vipvgm.net/mu/mellow/mgs3-seabreeze.m4a",
+    },
+    {
+      "author": "Donkey Kong Country",
+      "name": "Aquatic Ambience",
+      "link": "https://www.vipvgm.net/mu/mellow/dkc-oneups-aquaticambience.m4a",
     },
     {
       "author": "Animal Crossing",
@@ -12,103 +22,33 @@ const trackObject = {
     },
     {
       "author": "Animal Crossing",
-      "name": "Kenta Nagata - Title",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossing-kentanagata-title.m4a",
-    },
-    {
-      "author": "Animal Crossing",
       "name": "Mesmonium - KK Cruisin' (True Remix)",
       "link": "https://www.vipvgm.net/mu/animalcrossing-mesmonium-kkcruisin(trueremix).m4a",
     },
     {
-      "author": "Animal Crossing: New Leaf",
-      "name": "Aivi Tran - Main Street",
-      "link": "https://www.vipvgm.net/mu/mellow/animalcrossingnl-aivitran-mainstreet.m4a",
+      "author": "The Sims",
+      "name": "BoSIM Nova",
+      "link": "https://www.vipvgm.net/mu/mellow/sims-bosimnova.m4a",
     },
     {
-      "author": "Attack of the Friday Monsters! A Tokyo Tale",
-      "name": "Toll of Small Happiness",
-      "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-tollofsmallhappiness.m4a",
+      "author": "Sonic the Hedgehog",
+      "name": "Ben Briggs - Green Chill Zone",
+      "link": "https://www.vipvgm.net/mu/mellow/sonic-benbriggs-greenchillzone.m4a",
     },
     {
-      "author": "Attack of the Friday Monsters! A Tokyo Tale",
-      "name": "Vision of Loveliness Sixth in the Class!",
-      "link": "https://www.vipvgm.net/mu/mellow/attackfridaymonsters-visionoflovelinesssixthintheclass.m4a",
-    },
-    {
-      "author": "Braid",
-      "name": "Downstream",
-      "link": "https://www.vipvgm.net/mu/mellow/braid-downstream.m4a",
-    },
-    {
-      "author": "Braid",
-      "name": "Lullaby Set",
-      "link": "https://www.vipvgm.net/mu/mellow/braid-lullabyset.m4a",
-    },
-    {
-      "author": "Call of Duty",
-      "name": "Pegasus Bridge",
-      "link": "https://www.vipvgm.net/mu/mellow/cod-pegasusbridge.m4a",
-    },
-    {
-      "author": "Castlevania: Symphony of the Night",
-      "name": "GENTLE LOVE - Lost Painting",
-      "link": "https://www.vipvgm.net/mu/mellow/castlevaniasotn-gentlelove-lostpainting.m4a",
-    },
-    {
-      "author": "Child of Light",
-      "name": "Little Girl, Gen",
-      "link": "https://www.vipvgm.net/mu/mellow/childoflight-littlegirlgen.m4a",
-    },
-    {
-      "author": "Child of Light",
-      "name": "Patches of Sky",
-      "link": "https://www.vipvgm.net/mu/mellow/childoflight-patchesofsky.m4a",
-    },
-    {
-      "author": "Child of Light",
-      "name": "Trifantasy - Aurora's Theme",
-      "link": "https://www.vipvgm.net/mu/mellow/childoflight-trifantasy-aurorastheme.m4a",
-    },
-    {
-      "author": "Chrono Cross",
-      "name": "Meine Meinung - Guldove (Home World)",
-      "link": "https://www.vipvgm.net/mu/mellow/chronocross-meinemeinung-guldove(homeworld).m4a",
-    },
-    {
-      "author": "Chrono Cross",
-      "name": "OceansAndrew, Scaredsim, prophetik music - Regretful Lullaby (Ephemeral Feelings)",
-      "link": "https://www.vipvgm.net/mu/mellow/chronocross-oceansandrew-regretfullullaby.m4a",
-    },
-    {
-      "author": "Chrono Cross",
-      "name": "Steven Melin, freezetag - Eye of the Storm (The Bend of Time)",
-      "link": "https://www.vipvgm.net/mu/mellow/chronocross-stevenmelin-eyeofthestorm.m4a",
-    },
-    {
-      "author": "Chrono Cross",
-      "name": "Wiesty, The OC Jazz Collective - Cosmic Kleptomaniac (The Girl Who Stole the Stars)",
-      "link": "https://www.vipvgm.net/mu/mellow/chronocross-wiesty-cosmickleptomaniac.m4a",
+      "author": "Super Mario 64",
+      "name": "Dale North, Mustin - Mario Bay Breeze",
+      "link": "https://www.vipvgm.net/mu/mellow/sm64-dalenorth-mariobaybreeze.m4a",
     },
     {
       "author": "Chrono Trigger",
-      "name": "Makinosuke Kubota - Kaeru's Theme",
-      "link": "https://www.vipvgm.net/mu/mellow/chronotrigger-makinosukekubota-kaerustheme.m4a",
-    },
-    {
-      "author": "Chrono Trigger",
-      "name": "mustin - Bottomed Out",
+      "name": "Bottomed Out",
       "link": "https://www.vipvgm.net/mu/mellow/chronotrigger-mustin-bottomedout.m4a",
     },
     {
       "author": "Chrono Trigger",
-      "name": "The OC Jazz Collective - Dream of Green (1000 A.D.)",
+      "name": "Dream of Green (1000 A.D.)",
       "link": "https://www.vipvgm.net/mu/mellow/chronotrigger-ocjazzcollective-dreamofgreen.m4a",
-    },
-    {
-      "author": "Chrono Trigger",
-      "name": "Retro Remix Revue - Secret of the Forest",
-      "link": "https://www.vipvgm.net/mu/mellow/chronotrigger-retroremixrevue-secretoftheforest.m4a",
     },
     {
       "author": "Chrono Trigger",
@@ -116,19 +56,24 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/chronotrigger-supply-blue.m4a",
     },
     {
-      "author": "Dawn of Mana",
-      "name": "Rising Sun",
-      "link": "https://www.vipvgm.net/mu/dawnofmana-risingsun.m4a",
+      "author": "Chrono Cross",
+      "name": "Guldove (Home World)",
+      "link": "https://www.vipvgm.net/mu/mellow/chronocross-meinemeinung-guldove(homeworld).m4a",
+    },
+    {
+      "author": "Chrono Cross",
+      "name": "Cosmic Kleptomaniac (The Girl Who Stole the Stars)",
+      "link": "https://www.vipvgm.net/mu/mellow/chronocross-wiesty-cosmickleptomaniac.m4a",
     },
     {
       "author": "Dawn of Mana",
-      "name": "Kenji Ito - Rising Sun (piano solo ver.)",
+      "name": "Rising Sun (piano solo ver.)",
       "link": "https://www.vipvgm.net/mu/mellow/dawnofmana-kenjiito-risingsun(pianosolo).m4a",
     },
     {
-      "author": "Deus Ex: Human Revolution",
-      "name": "Thuul - The fall of Icarus",
-      "link": "https://www.vipvgm.net/mu/mellow/dxhr-thuul-falloficarus.m4a",
+      "author": "Alcarys Complex",
+      "name": "Admiral",
+      "link": "https://www.vipvgm.net/mu/mellow/alcaryscomplex-admiral.m4a",
     },
     {
       "author": "DEEMO",
@@ -141,18 +86,13 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/deemo-yawninglion.m4a",
     },
     {
-      "author": "Donkey Kong Country",
-      "name": "The OneUps - Aquatic Ambience",
-      "link": "https://www.vipvgm.net/mu/mellow/dkc-oneups-aquaticambience.m4a",
-    },
-    {
       "author": "Donkey Kong Country: Tropical Freeze",
-      "name": "Mangrove Cove-Underwater",
+      "name": "Mangrove Cove - Underwater",
       "link": "https://www.vipvgm.net/mu/mellow/dkctr-mangrovecove-underwater.m4a",
     },
     {
       "author": "DuckTales",
-      "name": "GENTLE LOVE - The Moon",
+      "name": "The Moon",
       "link": "https://www.vipvgm.net/mu/mellow/ducktales-gentlelove-moon.m4a",
     },
     {
@@ -172,12 +112,12 @@ const trackObject = {
     },
     {
       "author": "Earthbound",
-      "name": "SongeLeReveur - Home Sweet Home",
+      "name": "Home Sweet Home",
       "link": "https://www.vipvgm.net/mu/earthbound-songelereveur-homesweethome.m4a",
     },
     {
       "author": "Earthbound",
-      "name": "Super Soul Bros - Coffee Break",
+      "name": "Coffee Break",
       "link": "https://www.vipvgm.net/mu/mellow/earthbound-supersoulbros-coffeebreak.m4a",
     },
     {
@@ -187,77 +127,67 @@ const trackObject = {
     },
     {
       "author": "Fantasy Maiden Wars Scarlet",
-      "name": "The Dream is Here ~ Hiroshige No. 36",
+      "name": "The Dream is Here",
       "link": "https://www.vipvgm.net/mu/mellow/fantasymaidenwarsscarlet-dreamishere.m4a",
     },
     {
       "author": "Final Fantasy III",
-      "name": "Meine Meinung - Eternal Wind",
+      "name": "Eternal Wind",
       "link": "https://www.vipvgm.net/mu/ff3-meinemeinung-eternalwind.m4a",
     },
     {
       "author": "Final Fantasy IV",
-      "name": "Maire Bhreatnach - Prologue...",
+      "name": "Prologue...",
       "link": "https://www.vipvgm.net/mu/mellow/ff4-mairebhreatnach-prologue.m4a",
     },
     {
       "author": "Final Fantasy IV",
-      "name": "Maire Bhreatnach - Rydia",
+      "name": "Rydia",
       "link": "https://www.vipvgm.net/mu/mellow/ff4-mairebhreatnach-rydia.m4a",
     },
     {
-      "author": "Final Fantasy IV",
-      "name": "Maire Bhreatnach - Theme of Love",
-      "link": "https://www.vipvgm.net/mu/mellow/ff4-mairebhreatnach-themeoflove.m4a",
-    },
-    {
       "author": "Final Fantasy VI",
-      "name": "Reiko Nomura - Tina",
+      "name": "Tina",
       "link": "https://www.vipvgm.net/mu/mellow/ff6-reikonomura-tina.m4a",
     },
     {
-      "author": "Final Fantasy VI",
-      "name": "Yoshiro Nakamura, Risa Ohki, Claudio Ramos - Nao Chora Menina",
-      "link": "https://www.vipvgm.net/mu/mellow/ff6-yoshironakamura-naochoramenina.m4a",
-    },
-    {
       "author": "Final Fantasy VII",
-      "name": "Andrew Furmanczyk & Joanna Lee - Tifa's Theme",
+      "name": "Tifa's Theme",
       "link": "https://www.vipvgm.net/mu/mellow/ff7-andrewfurmanczyk-tifastheme.m4a",
     },
     {
       "author": "Final Fantasy VII",
-      "name": "Fredrik Hathen - Keep Kalm and Carry On",
+      "name": "Keep Kalm and Carry On",
       "link": "https://www.vipvgm.net/mu/mellow/ff7-fredrikhathen-keepkalmandcarryon.m4a",
     },
     {
       "author": "Final Fantasy VII",
-      "name": "Joanne Moo & Kristin Naigus - Dear to the Heart",
+      "name": "Dear to the Heart",
       "link": "https://www.vipvgm.net/mu/mellow/ff7-joannemoo-deartotheheart.m4a",
     },
     {
       "author": "Final Fantasy VII",
-      "name": "Takashi Hoshide - Words Drowned by Fireworks",
+      "name": "Words Drowned by Fireworks",
       "link": "https://www.vipvgm.net/mu/mellow/ff7-takashihoshide-wordsdrownedoutbyfireworks.m4a",
     },
     {
       "author": "Final Fantasy VIII",
-      "name": "Naganori Sakakibara - Eyes on Me (Acoustic Guitar Version)",
+      "name": "Eyes on Me (Acoustic Guitar Version)",
       "link": "https://www.vipvgm.net/mu/mellow/ff8-naganorisakakibara-eyesonme(acousticguitar).m4a",
     },
     {
       "author": "Final Fantasy IX",
-      "name": "Shiro Hamaguchi - Melodies of Life",
+      "name": "Melodies of Life",
       "link": "https://www.vipvgm.net/mu/mellow/ff9-shirohamaguchi-melodiesoflife.m4a",
     },
     {
       "author": "Final Fantasy X",
-      "name": "Trifantasy - To Zanarkand",
+      "name": "To Zanarkand",
       "link": "https://www.vipvgm.net/mu/mellow/ff10-trifantasy-tozanarkand.m4a",
     },
     {
       "author": "Final Fantasy X",
-      "name": "Zephyr Cradle - Spira's Spectacle",
+      "name": "Spira's Spectacle",
       "link": "https://www.vipvgm.net/mu/mellow/ff10-zephyrcradle-spirasspectacle.m4a",
     },
     {
@@ -267,12 +197,12 @@ const trackObject = {
     },
     {
       "author": "Final Fantasy XI",
-      "name": "Ayumi Iga - Distant Worlds",
+      "name": "Distant Worlds",
       "link": "https://www.vipvgm.net/mu/mellow/ff11cop-ayumiiga-distantworlds.m4a",
     },
     {
       "author": "Final Fantasy XIII",
-      "name": "Ryu Kawamura - Serah's Theme Jazz Arrangement",
+      "name": "Serah's Theme Jazz Arrangement",
       "link": "https://www.vipvgm.net/mu/mellow/ff13-ryukawamura-serahsthemejazzarrange.m4a",
     },
     {
@@ -282,7 +212,7 @@ const trackObject = {
     },
     {
       "author": "For the Frog the Bell Tolls",
-      "name": "Kazumi Totaka - Main Theme",
+      "name": "Main Theme",
       "link": "https://www.vipvgm.net/mu/mellow/ftftbt-kazumitotaka-maintheme.m4a",
     },
     {
@@ -291,39 +221,19 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/fragiledreams-letter.m4a",
     },
     {
-      "author": "Fragile Dreams ~Farewell Ruins of the Moon~",
-      "name": "Thank You",
-      "link": "https://www.vipvgm.net/mu/mellow/fragiledreams-thankyou.m4a",
-    },
-    {
       "author": "Gitarooman",
-      "name": "The Legendary Theme (Acoustic Version)",
+      "name": "The Legendary Theme (Acoustic)",
       "link": "https://www.vipvgm.net/mu/mellow/gitarooman-legendarytheme(acoustic).m4a",
     },
     {
-      "author": "God Eaters Burst",
-      "name": "In the sun",
-      "link": "https://www.vipvgm.net/mu/mellow/godseaterburst-inthesun.m4a",
-    },
-    {
-      "author": "God Eaters Burst",
-      "name": "Peaceful Time",
-      "link": "https://www.vipvgm.net/mu/mellow/godseaterburst-peacefultime.m4a",
-    },
-    {
       "author": "Golden Sun",
-      "name": "DaMonz - Where It All Began",
+      "name": "Where It All Began",
       "link": "https://www.vipvgm.net/mu/mellow/goldensun-damonz-whereitallbegan.m4a",
     },
     {
       "author": "Granado Espada",
       "name": "Granado Espada",
       "link": "https://www.vipvgm.net/mu/mellow/granadoespada-granadoespada.m4a",
-    },
-    {
-      "author": "Granado Espada",
-      "name": "Tears of witch",
-      "link": "https://www.vipvgm.net/mu/mellow/granadoespada-tearsofwitch.m4a",
     },
     {
       "author": "Gravity Rush",
@@ -336,28 +246,23 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/halo3odst-rain.m4a",
     },
     {
-      "author": "Hexyz Force",
-      "name": "Requiem of the Sorrowful Ones",
-      "link": "https://www.vipvgm.net/mu/mellow/hexyzforce-requiemofthesorrowfulones.m4a",
-    },
-    {
       "author": "ICO",
       "name": "gon1choko1 - You Were There",
       "link": "https://www.vipvgm.net/mu/mellow/ico-gon1choko1-youwerethere.m4a",
     },
     {
       "author": "Ihatov Story",
-      "name": "Tsukasa Tawada - Snowy Landscape",
+      "name": "Snowy Landscape",
       "link": "https://www.vipvgm.net/mu/mellow/ihatovstory-tsukasatawada-snowylandscape.m4a",
     },
     {
       "author": "Ihatov Story",
-      "name": "Tsukasa Tawada - Travel Diary",
+      "name": "Travel Diary",
       "link": "https://www.vipvgm.net/mu/mellow/ihatovstory-tsukasatawada-traveldiary.m4a",
     },
     {
       "author": "Ihatov Story",
-      "name": "Tsukasa Tawada - Ihatovo Praise For Piano",
+      "name": "Ihatovo Praise For Piano",
       "link": "https://www.vipvgm.net/mu/ihatovstory-tsukasatawada-ihatovopraiseforpiano.m4a",
     },
     {
@@ -369,11 +274,6 @@ const trackObject = {
       "author": "Irisu Syndrome",
       "name": "About 10 Hours Looking at the Ceiling",
       "link": "https://www.vipvgm.net/mu/mellow/irisusyndrome-about10hourslookingatceiling.m4a",
-    },
-    {
-      "author": "Irisu Syndrome",
-      "name": "Zero Reception",
-      "link": "https://www.vipvgm.net/mu/mellow/irisusyndrome-zeroreception.m4a",
     },
     {
       "author": "Katamari Damacy",
@@ -389,6 +289,21 @@ const trackObject = {
       "author": "Legend of Mana",
       "name": "Nostalgic Song",
       "link": "https://www.vipvgm.net/mu/mellow/legendofmana-nostalgicsong.m4a",
+    },
+    {
+      "author": "Animal Crossing: New Leaf",
+      "name": "Aivi Tran - Main Street",
+      "link": "https://www.vipvgm.net/mu/mellow/animalcrossingnl-aivitran-mainstreet.m4a",
+    },
+    {
+      "author": "Castlevania: Symphony of the Night",
+      "name": "GENTLE LOVE - Lost Painting",
+      "link": "https://www.vipvgm.net/mu/mellow/castlevaniasotn-gentlelove-lostpainting.m4a",
+    },
+    {
+      "author": "Child of Light",
+      "name": "Trifantasy - Aurora's Theme",
+      "link": "https://www.vipvgm.net/mu/mellow/childoflight-trifantasy-aurorastheme.m4a",
     },
     {
       "author": "The Legend of Zelda: A Link to the Past",
@@ -444,11 +359,6 @@ const trackObject = {
       "author": "Metal Gear Solid 3: Snake Eater",
       "name": "Old Metal Gear",
       "link": "https://www.vipvgm.net/mu/mellow/mgs3-oldmetalgear.m4a",
-    },
-    {
-      "author": "Metal Gear Solid 3: Snake Eater",
-      "name": "Sea Breeze",
-      "link": "https://www.vipvgm.net/mu/mellow/mgs3-seabreeze.m4a",
     },
     {
       "author": "Metal Gear Solid 3: Snake Eater",
@@ -597,11 +507,6 @@ const trackObject = {
     },
     {
       "author": "The Sims",
-      "name": "BoSIM Nova",
-      "link": "https://www.vipvgm.net/mu/mellow/sims-bosimnova.m4a",
-    },
-    {
-      "author": "The Sims",
       "name": "Neighborhood",
       "link": "https://www.vipvgm.net/mu/mellow/sims-neighborhood.m4a",
     },
@@ -609,6 +514,16 @@ const trackObject = {
       "author": "The Sims",
       "name": "Now Entering",
       "link": "https://www.vipvgm.net/mu/mellow/sims-nowentering.m4a",
+    },
+    {
+      "author": "Braid",
+      "name": "Downstream",
+      "link": "https://www.vipvgm.net/mu/mellow/braid-downstream.m4a",
+    },
+    {
+      "author": "Braid",
+      "name": "Lullaby Set",
+      "link": "https://www.vipvgm.net/mu/mellow/braid-lullabyset.m4a",
     },
     {
       "author": "The Sims: Hot Date",
@@ -621,11 +536,6 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/simshotdate-club.m4a",
     },
     {
-      "author": "The Sims 2: Apartment Life",
-      "name": "Sim Will Build",
-      "link": "https://www.vipvgm.net/mu/sims2apartmentlife-simwillbuild.m4a",
-    },
-    {
       "author": "The Sims 2: In Season",
       "name": "Theme",
       "link": "https://www.vipvgm.net/mu/mellow/sims2seasons-theme.m4a",
@@ -634,16 +544,6 @@ const trackObject = {
       "author": "The Sims 3: Pets",
       "name": "Cul-De-Sac of Memories",
       "link": "https://www.vipvgm.net/mu/mellow/sims3pets-culdesacofmemories.m4a",
-    },
-    {
-      "author": "The Sims 4 ",
-      "name": "Topography",
-      "link": "https://www.vipvgm.net/mu/mellow/sims4-topography.m4a",
-    },
-    {
-      "author": "Sonic the Hedgehog",
-      "name": "Ben Briggs - Green Chill Zone",
-      "link": "https://www.vipvgm.net/mu/mellow/sonic-benbriggs-greenchillzone.m4a",
     },
     {
       "author": "Sonic the Hedgehog",
@@ -677,53 +577,38 @@ const trackObject = {
     },
     {
       "author": "Super Mario 64",
-      "name": "Dale North, Mustin - Mario Bay Breeze",
-      "link": "https://www.vipvgm.net/mu/mellow/sm64-dalenorth-mariobaybreeze.m4a",
-    },
-    {
-      "author": "Super Mario 64",
       "name": "Koji Kondo - Pakkun Flower's Lullaby",
       "link": "https://www.vipvgm.net/mu/mellow/sm64-kojikondo-pakkunflowerslullaby.m4a",
     },
     {
       "author": "Super Mario Galaxy",
-      "name": "Aivi Tran - Space Junk Galaxy",
+      "name": "Space Junk Galaxy",
       "link": "https://www.vipvgm.net/mu/mellow/smgalaxy-aivitran-spacejunkgalaxy.m4a",
     },
     {
       "author": "Super Mario Bros.",
-      "name": "Soichi Noriki - Shining Coral",
+      "name": "Shining Coral",
       "link": "https://www.vipvgm.net/mu/mellow/smb-soichinoriki-shiningcoral.m4a",
     },
     {
       "author": "Super Mario Bros. 3",
-      "name": "Soichi Noriki - Peaceful Mushroom-World",
+      "name": "Peaceful Mushroom-World",
       "link": "https://www.vipvgm.net/mu/smb3-soichinoriki-peacefulmushroomworld.m4a",
     },
     {
       "author": "Super Mario World",
-      "name": "Soichi Noriki - Morning of Yoshi's Island",
+      "name": "Morning of Yoshi's Island",
       "link": "https://www.vipvgm.net/mu/mellow/smw-soichinoriki-morningofyoshisisland.m4a",
     },
     {
       "author": "Super Mario World",
-      "name": "Soichi Noriki - Thank You, Mario!",
+      "name": "Thank You, Mario!",
       "link": "https://www.vipvgm.net/mu/mellow/smw-soichinoriki-thankyoumario.m4a",
     },
     {
       "author": "Super Smash Brothers Brawl",
       "name": "The Roost",
       "link": "https://www.vipvgm.net/mu/mellow/ssbb-roost.m4a",
-    },
-    {
-      "author": "Tearaway",
-      "name": "The Message",
-      "link": "https://www.vipvgm.net/mu/mellow/tearaway-message.m4a",
-    },
-    {
-      "author": "To the Moon",
-      "name": "Everything's Alright",
-      "link": "https://www.vipvgm.net/mu/tothemoon-everythingsalright.m4a",
     },
     {
       "author": "To the Moon",
@@ -737,13 +622,8 @@ const trackObject = {
     },
     {
       "author": "TH06: Touhou Koumakyou ~ Embodiment of Scarlet Devil",
-      "name": "Demetori - Crimson Belvedere ~ Eastern Dream (Acoustic Demo)",
+      "name": "Eastern Dream (Acoustic)",
       "link": "https://www.vipvgm.net/mu/mellow/th06-demetori-crimsonbelvedere.m4a",
-    },
-    {
-      "author": "TH06: Touhou Koumakyou ~ Embodiment of Scarlet Devil",
-      "name": "FELT - Screen",
-      "link": "https://www.vipvgm.net/mu/mellow/th06-felt-screen.m4a",
     },
     {
       "author": "TH06: Touhou Koumakyou ~ Embodiment of Scarlet Devil",
@@ -762,11 +642,6 @@ const trackObject = {
     },
     {
       "author": "TH11: Touhou Chireiden ~ Subterranean Animism",
-      "name": "BUTAOTOME - Mouja to Odoru",
-      "link": "https://www.vipvgm.net/mu/mellow/th11-butaotome-moujatoodoru.m4a",
-    },
-    {
-      "author": "TH11: Touhou Chireiden ~ Subterranean Animism",
       "name": "FELT - Revelations",
       "link": "https://www.vipvgm.net/mu/mellow/th11-felt-revelations.m4a",
     },
@@ -781,38 +656,28 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/th128-dBumusic-harunohyousei.m4a",
     },
     {
-      "author": "To the Moon",
-      "name": "Everything's Alright",
-      "link": "https://www.vipvgm.net/mu/tothemoon-everythingsalright.m4a",
-    },
-    {
       "author": "Xenogears",
       "name": "zohar002 - Shevat, the Wind is Calling",
       "link": "https://www.vipvgm.net/mu/xenogears-zohar002-shevatthewindiscalling.m4a",
     },
     {
       "author": "Uncharted Waters",
-      "name": "Yoko Kanno - The Card Master",
-      "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters-yokokanno-cardmaster.m4a",
-    },
-    {
-      "author": "Uncharted Waters",
-      "name": "Yoko Kanno - Portugal",
+      "name": "Portugal",
       "link": "https://www.vipvgm.net/mu/unchartedwaters-yokokanno-portugal.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - Caprice for the Lute",
+      "name": "Caprice for the Lute",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-capriceforlute.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - Close to Home",
+      "name": "Close to Home",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-closetohome.m4a",
     },
     {
       "author": "Uncharted Waters: New Horizons",
-      "name": "Yoko Kanno - Emerald Sea",
+      "name": "Emerald Sea",
       "link": "https://www.vipvgm.net/mu/mellow/unchartedwaters2-yokokanno-emptyeyes.m4a",
     },
     {
@@ -827,33 +692,8 @@ const trackObject = {
     },
     {
       "author": "Valkyria Chronicles",
-      "name": "A Moment of Relief",
-      "link": "https://www.vipvgm.net/mu/mellow/valkyriachronicles-momentofrelief.m4a",
-    },
-    {
-      "author": "Valkyria Chronicles",
       "name": "Randgrith Archduke's Family",
       "link": "https://www.vipvgm.net/mu/mellow/valkyriachronicles-randgritharchdukesfamily.m4a",
-    },
-    {
-      "author": "Valkyria Chronicles",
-      "name": "Those Who Succeeded",
-      "link": "https://www.vipvgm.net/mu/valkyriachronicles-thosewhosucceeded.m4a",
-    },
-    {
-      "author": "X3: Reunion",
-      "name": "Peace (Vocal)",
-      "link": "https://www.vipvgm.net/mu/mellow/x3-peace(vocal).m4a",
-    },
-    {
-      "author": "Xanadu Next",
-      "name": "The Treacherous Woods",
-      "link": "https://www.vipvgm.net/mu/mellow/xanadunext-treacherouswoods.m4a",
-    },
-    {
-      "author": "Xenoblade Chronicles",
-      "name": "Colony 9 (Night)",
-      "link": "https://www.vipvgm.net/mu/mellow/xenoblade-jonnyatma-gaurplains.m4a",
     },
     {
       "author": "Xenoblade Chronicles",
@@ -876,9 +716,14 @@ const trackObject = {
       "link": "https://www.vipvgm.net/mu/mellow/xenogears-dalenorth-brokenmirror.m4a",
     },
     {
-      "author": "Xenogears",
-      "name": "Natsumi Kameoka, Bulgarian Symphony Orchestra - SMALL TWO OF PIECES -Orchestral Version-",
-      "link": "https://www.vipvgm.net/mu/mellow/xenogears-natsumikameoka-small2ofpieces(orchestral).m4a",
+      "author": "Valkyria Chronicles",
+      "name": "A Moment of Relief",
+      "link": "https://www.vipvgm.net/mu/mellow/valkyriachronicles-momentofrelief.m4a",
+    },
+    {
+      "author": "Fragile Dreams ~Farewell Ruins of the Moon~",
+      "name": "Thank You",
+      "link": "https://www.vipvgm.net/mu/mellow/fragiledreams-thankyou.m4a",
     },
     {
       "author": "Fragile Dreams",
